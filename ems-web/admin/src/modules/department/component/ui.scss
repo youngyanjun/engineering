@@ -1,0 +1,38 @@
+@import '@/styles/variable.scss';
+
+$contentHeight: rpx(94);
+.content {
+  margin: rpx(16) auto 0;
+  width: rpx(1400);
+  min-height: calc(100% - #{$contentHeight});
+  background-color: #fff;
+  border-radius: rpx(4) rpx(4) 0 0;
+  box-shadow: 0 rpx(1) rpx(3) rgba(0, 28, 41, .08);
+
+  &>:global(.ls-tab) {
+
+    :global(.ls-tab-navs) {
+      background-color: #F7F8FA;
+      justify-content: flex-start;
+    }
+
+    :global(.ls-tab-nav) {
+      width: rpx(146);
+      font-size: rpx(16);
+      color: #445279;
+      line-height: rpx(48);
+      text-align: center;
+      cursor: pointer;
+      
+      &:global(.is-active) {
+        color: #55A8FD;
+        background-color: #fff;
+      }
+    }
+
+    :global(.ls-tab-item) {
+      min-height: rpx(500);
+      background-color: #fff;
+    }
+  }
+}

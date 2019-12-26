@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.construction.mapper.WengineeringReportMapper">
+
+    <select id="selectYearItemList" resultType="com.bimforest.ems.pojo.DateWeekly">
+       SELECT weekly_num as weekly ,
+       to_char(construction_date_start,'YYYY-MM-DD') as sDate,
+       to_char(construction_date_finis,'YYYY-MM-DD') as  eDate
+       FROM reportw_engineering WHERE EXTRACT(YEAR FROM construction_date_start) = #{nowDate}  ;
+    </select>
+    <select id="getBaseInfoById" resultType="com.bimforest.ems.modules.construction.vo.WeeklyBaseInfoVO">
+        select
+            report_name,
+            construction_name,
+            construction_unit,
+            quality_inspection_unit,
+            quality_inspection_station,
+            projec_leader,
+            technical_leader,
+            safe_man,
+            contract_price,
+            money_back,
+            weekly_num,
+            construction_date_start,
+            construction_date_finis,
+            completion_rate,
+            report_by,
+            state
+          from reportw_engineering
+           where id = #{id}
+    </select>
+    <select id="getStageInfoById" resultType="com.bimforest.ems.modules.construction.vo.StageInfoVO">
+         select
+             id,
+            coordination,
+            drawings,
+            contract,
+            civilengineering_sub,
+            prefabricated_sub,
+            waterpower_sub,
+            havc_sub,
+            stage_info_remark,
+            decoration_sub,
+            other_sub
+          from reportw_engineering
+           where id = #{id}
+
+    </select>
+    <select id="getNextPlanById" resultType="com.bimforest.ems.modules.construction.vo.StageInfoVO">
+         select
+            next_coordination as coordination,
+            next_drawings as drawings,
+            next_contract as contract,
+            next_civilengineering_sub as civilengineeringSub,
+            next_prefabricated_sub as prefabricatedSub,
+            next_waterpower_sub as waterpowerSub,
+            next_havc_sub as havcSub,
+            next_stage_info_remark as stageInfoRemark,
+            next_decoration_sub as decorationSub,
+            next_other_sub as otherSub
+          from reportw_engineering
+           where id = #{id}
+
+
+
+
+    </select>
+    <select id="getSiteRectify" resultType="com.bimforest.ems.modules.construction.vo.SiteRectifyVO">
+
+        select
+          rectification
+          from reportw_engineering
+           where id = #{id}
+    </select>
+    <select id="getSafeInfo" resultType="com.bimforest.ems.modules.construction.vo.SafeInfoVO">
+        select
+          safe_info,
+          danger_source,
+          next_danger_source,
+          site_check
+          from reportw_engineering
+           where id = #{id}
+
+    </select>
+    <select id="getInOutFile" resultType="com.bimforest.ems.modules.construction.vo.InOutFileVO">
+        select
+         receive_file_in,
+        receive_file_out
+          from reportw_engineering
+           where id = #{id}
+
+    </select>
+    <select id="getEffect" resultType="com.bimforest.ems.modules.construction.vo.EffectVO">
+        select
+         effect
+          from reportw_engineering
+           where id = #{id}
+    </select>
+    <select id="getSiteOtherInfo" resultType="com.bimforest.ems.modules.construction.vo.SiteOtherInfoVO">
+        select
+         other_site_info
+          from reportw_engineering
+           where id = #{id}
+
+    </select>
+    <select id="getNextStageInfo" resultType="com.bimforest.ems.modules.construction.vo.StageInfoVO">
+
+         select
+            next_coordination as coordination,
+            next_drawings as drawings,
+            next_contract as contract,
+            next_civilengineering_sub as civilengineeringSub,
+            next_prefabricated_sub as prefabricatedSub,
+            next_waterpower_sub as waterpowerSub,
+            next_havc_sub as havcSub,
+            next_stage_info_remark as stageInfoRemark,
+            next_decoration_sub as decorationSub,
+            next_other_sub as otherSub
+          from reportw_engineering
+           where weekly_num = #{weekly}
+           and id = #{engineeringId}
+
+
+    </select>
+    <select id="getWeeklyIdByWeekly" resultType="java.lang.String">
+        select
+           id
+          from reportw_engineering
+           where weekly_num = #{weekly}
+           and id = #{engineeringId}
+
+    </select>
+    <select id="reportMapper" resultType="com.bimforest.ems.modules.construction.vo.WeeklyMustFiledVO">
+            SELECT
+            id,
+            w.construction_name,
+            w.projec_leader,
+            w.technical_leader,
+            w.safe_man,
+            w.contract_price,
+            w.money_back,
+            w.completion_rate
+            FROM
+            reportw_engineering w
+            WHERE
+            id = #{id}
+    </select>
+
+
+</mapper>

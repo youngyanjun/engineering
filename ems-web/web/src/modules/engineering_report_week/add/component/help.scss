@@ -1,0 +1,53 @@
+@import '@/styles/variable.scss';
+
+.content {
+  min-height: 100%;
+
+  :global(.edited-table-th),
+  :global(.edited-table-td) {
+    line-height: 1.2em;
+  }
+}
+
+.hd {
+  padding: rpx(16) rpx(16) rpx(8);
+  border-bottom: rpx(1) solid #E1E3E9;
+}
+
+$bdHeight: rpx(62);
+.bd {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: rpx(540);
+  height: calc(100% - #{$bdHeight});
+  font-size: rpx(12);
+  overflow-y: auto;
+}
+
+.title {
+  font-size: rpx(16);
+  color: #445279;
+}
+
+.subtitle {
+  font-size: rpx(12);
+  color: rgba(68, 82, 121, .48);
+}
+
+.group {
+  font-size: rpx(16);
+  color: rgba(68, 82, 121, .48);
+  text-align: center;
+}
+
+.empty {
+  padding: rpx(72);
+}
+
+.icon::before {
+  content: '\e669';
+  font-family: iconfont;
+  font-size: rpx(30);
+  font-style: normal;
+}

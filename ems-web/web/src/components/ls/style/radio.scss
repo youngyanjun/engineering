@@ -1,0 +1,46 @@
+$radio-namespace: 'ls-radio';
+
+.#{$radio-namespace} {
+  display: inline-block;
+
+  &-prefix {
+    display: inline-block;
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #E6E7EC;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  &.is-checked &-prefix {
+    position: relative;
+    border-color: #55A8FD;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #55A8FD;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.is-disabled {
+    color: #c0c4cc;
+    cursor: not-allowed;
+  }
+
+  &.is-disabled &-prefix {
+    border-color: #c0c4cc;
+
+    &:before {
+      background-color:#c0c4cc;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": "1",
+    "createDate": "2019-11-11 00:00:00",
+    "updateDate": "2019-11-11 00:00:00",
+    "createBy": null,
+    "updateBy": null,
+    "status": null,
+    "dictionaryName": "量树之云修改2",
+    "dictionaryChild": "[\"测试\",\"反应\"]"
+  }
+}

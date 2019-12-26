@@ -1,0 +1,24 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": null,
+    "engineeringId": null,
+    "state": null,
+    "constructionName": "1",
+    "constructionUnit": "2",
+    "qualityInspectionUnit": "2",
+    "qualityInspectionStation": null,
+    "projecLeader": "3",
+    "technicalLeader": "4",
+    "safeMan": null,
+    "contractPrice": null,
+    "moneyBack": null,
+    "weeklyNum": 9,
+    "constructionDateStart": "2019-03-16 00:00:00",
+    "constructionDateFinis": "2019-03-22 00:00:00",
+    "completionRate": null,
+    "reportBy": null
+  }
+}

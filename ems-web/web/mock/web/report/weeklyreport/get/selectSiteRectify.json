@@ -1,0 +1,9 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": null,
+    "rectification": "[{\"type\":2,\"content\":\"2\",\"result\":\"3\"}]"
+  }
+}

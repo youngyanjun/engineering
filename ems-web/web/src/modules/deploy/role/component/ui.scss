@@ -1,0 +1,53 @@
+@import '@/styles/variable.scss';
+
+$contentHeight: rpx(132);
+.content {
+  display: flex;
+  min-height: calc(100% - #{$contentHeight});
+}
+
+.aside {
+  box-sizing: border-box;
+  width: rpx(480);
+  padding: rpx(22) rpx(40) rpx(0) rpx(16);
+
+  :global(.ls-tree-prefix) {
+    margin-left: rpx(24);
+  }
+
+  .tree-title {
+    cursor: pointer;
+  }
+}
+
+.main {
+  width: 100%;
+  padding: rpx(22) rpx(32);
+
+  :global(.ls-tab-navs) {
+    border-bottom: rpx(1) solid #E1E3E9;
+    justify-content: flex-start;
+  }
+  
+  :global(.ls-tab-nav) {
+    position: relative;
+    margin-right: rpx(40);
+    padding-bottom: rpx(16);
+    font-size: rpx(16);
+    color: rgba(68, 82, 121, .64);
+
+    &:global(.is-active) {
+      color: rgb(68, 82, 121);
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: rpx(-1);
+        width: 100%;
+        height: rpx(1);
+        background-color: #55A8FD;
+      }
+    }
+  }
+}

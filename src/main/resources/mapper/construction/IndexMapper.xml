@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.construction.mapper.IndexMapper">
+
+    <select id="selectReportList" resultType="com.bimforest.ems.modules.construction.vo.IndexReportVO">
+            select w.id ,
+            w.report_name,
+            w.construction_name as name,
+            to_char(w.construction_date_start, 'MM') as month,
+            '0' as type,
+            w.update_date as updateAt,
+            w.state as state
+            from
+            reportw_engineering w
+            where
+                 organization_id = #{organizationId}
+            <if test="name != null and name != ''">
+                and   w.construction_name like CONCAT('%',#{name},'%')
+            </if>
+            ORDER BY create_date
+        <!--<if test="type == 0 ">
+            select w.id ,
+            w.construction_name as name,
+            to_char(w.construction_date_start, 'MM') as month,
+            '0' as type,
+            w.update_date as updateAt,
+            w.state as state
+            from reportw_engineering w
+            where
+            organization_id = #{organizationId}
+            <if test="name != null and name != ''">
+              and   w.construction_name like CONCAT('%',#{name},'%')
+            </if>
+
+        </if>
+-->
+
+        <!--<choose>
+            <when test="name != null and name != ''">
+                select w.id ,
+                w.construction_name as name,
+                to_char(w.construction_date_start, 'MM') as month,
+                w.report_type as type,
+                w.update_date as updateAt,
+                w.state as state
+                from reportw_engineering w
+                where w.construction_name like CONCAT('%',#{name},'%')
+                <if test="type != null and type != ''">
+                    and w.report_type = #{type}
+                </if>
+                 and organization_id = #{organizationId}
+                union
+                select m.id ,
+                m.construction_name as name,
+                month_num as month,
+                m.report_type as type,
+                m.update_date as updateAt,
+                m.state as state
+                from mengineering_report m
+                where m.construction_name like CONCAT('%',#{name},'%')
+                <if test="type != null and type != ''">
+                    and m.report_type = #{type}
+                </if>
+                and organization_id = #{organizationId}
+            </when>
+            <otherwise>
+                select w.id ,
+                w.construction_name as name,
+                to_char(w.construction_date_start, 'MM') as month,
+                w.report_type as type,
+                w.update_date as updateAt,
+                w.state as state
+                from reportw_engineering w
+            <where>
+                <if test="type != null and type != ''">
+                    and w.report_type = #{type}
+                </if>
+                and organization_id = #{organizationId}
+            </where>
+                union
+                select m.id ,
+                m.construction_name as name,
+                month_num as month,
+                m.report_type as type,
+                m.update_date as updateAt,
+                m.state as state
+                from mengineering_report m
+                <where>
+                <if test="type != null and type != ''">
+                    and m.report_type = #{type}
+                </if>
+                    and m.organization_id = #{organizationId}
+                </where>
+            </otherwise>
+        </choose>-->
+    </select>
+</mapper>

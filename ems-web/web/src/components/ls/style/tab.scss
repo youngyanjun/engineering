@@ -1,0 +1,35 @@
+$tab-namespace: 'ls-tab';
+
+.#{$tab-namespace} {
+  // display: flex;
+  
+  &-navs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  &-items {
+
+  }
+
+  &-nav {
+    color: #445279;
+    cursor: pointer;
+
+    &.is-active {
+      color: #55A8FD;
+    }
+  }
+
+  &-item {
+    display: none;
+    text-align: center;
+    white-space: nowrap;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

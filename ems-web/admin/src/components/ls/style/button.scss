@@ -1,0 +1,206 @@
+@import './common/variable.scss';
+
+.#{$button-namespace} {
+  position: relative;
+  box-sizing: border-box;
+  padding-top: $button-padding;
+  padding-bottom: $button-padding;
+  border: $button-border solid $button-border-color;
+  border-radius: $button-radius;
+  background-color: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  padding-left: $button-normal-padding;
+  padding-right: $button-normal-padding;
+  font-size: $button-normal-font-size;
+  color: $button-color;
+  outline: none;
+
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  // }
+
+  // @keyframes effect {
+  //   0% { box-shadow: 0 0 0 0px #f00; }
+  //   100% { box-shadow: 0 0 0 2px #f00; }
+  // };
+
+  // &:active {
+  //   animation: effect 1s;
+  // }
+
+  &.is-base {
+    &:focus,
+    &:hover {
+      background-color: $button-default-background-color;
+      color: $button-default-color;
+    }
+  
+    &.is-plain {
+      &:focus,
+      &:hover {
+        background-color: #fff;
+        border-color: $button-default-border-color;
+      }
+    }
+  }
+
+
+  // color
+  &.is-default {
+    border-color: $button-default-border-color;
+    background-color: $button-default-color;
+    color: #fff;
+
+    &:focus,
+    &:hover {
+      background-color: $button-default-active-color;
+    }
+
+    &.is-plain {
+      background-color: $button-default-background-color;
+      color: $button-default-color;
+
+      &:focus,
+      &:hover {
+        background-color: $button-default-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &.is-success {
+    border-color: $button-success-border-color;
+    background-color: $button-success-color;
+    color: #fff;
+
+    &:focus,
+    &:hover {
+      background-color: $button-success-active-color;
+    }
+    
+    &.is-plain {
+      background-color: $button-success-background-color;
+      color: $button-success-color;
+      
+      &:focus,
+      &:hover {
+        background-color: $button-success-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &.is-danger {
+    border-color: $button-danger-border-color;
+    background-color: $button-danger-color;
+    color: #fff;
+
+    &:focus,
+    &:hover {
+      background-color: $button-danger-active-color;
+    }
+
+    &.is-plain {
+      background-color: $button-danger-background-color;
+      color: $button-danger-color;
+
+      &:focus,
+      &:hover {
+        background-color: $button-danger-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &.is-warning {
+    border-color: $button-warning-border-color;
+    background-color: $button-warning-color;
+    color: #fff;
+
+    &:focus,
+    &:hover {
+      background-color: $button-warning-active-color;
+    }
+
+    &.is-plain {
+      background-color: $button-warning-background-color;
+      color: $button-warning-color;
+
+      &:focus,
+      &:hover {
+        background-color: $button-warning-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &.is-text {
+    padding-left: 0;
+    padding-right: 0;
+    border-color: transparent;
+    color: $button-text-color;
+
+    &:focus,
+    &:hover {
+      color: $button-text-active-color;
+      background-color: transparent;
+    }
+
+    &.is-plain {
+      padding-left: $button-normal-padding;
+      padding-right: $button-normal-padding;
+      background-color: $button-text-background-color;
+      color: $button-text-color;
+
+      &:focus,
+      &:hover {
+        color: $button-text-active-color;
+        border-color: transparent;
+      }
+    }
+
+    &.is-disabled {
+      border-color: transparent!important;
+      background-color: transparent!important;
+      cursor: no-drop;
+    }
+  }
+
+  // size
+  &.is-large {
+    padding-left: $button-large-padding;
+    padding-right: $button-large-padding;
+    font-size: $button-large-font-size;
+  }
+
+  &.is-normal {
+    padding-left: $button-normal-padding;
+    padding-right: $button-normal-padding;
+    font-size: $button-normal-font-size;
+  }
+
+  &.is-small {
+    padding-left: $button-small-padding;
+    padding-right: $button-small-padding;
+    font-size: $button-small-font-size;
+  }
+
+  // 圆角
+  &.is-round {
+    border-radius: $button-round-radius;
+  }
+  
+  // 禁用
+  &.is-disabled {
+    background-color: #F2F5F7!important;
+    border-color: #CBD5E1!important;
+    color:#C5C7C8!important;
+    cursor: no-drop;
+  }
+}

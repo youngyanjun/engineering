@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.base.mapper.BaseEngineeringRanageMapper">
+
+    <select id="selectEngineeringRanages" resultType="com.bimforest.ems.modules.base.vo.EngineeringRanageSelectVO">
+        select
+            er.id,
+            u.id as userId,
+            u.user_name,
+            e.id as engineeringId,
+            e.create_date,
+            e.engineering_name,
+            er.engineering_stage
+        from
+            base_engineering_ranage er
+        left join sys_user u on
+            er.person_in_charge = u.id
+        left join base_engineering e on
+            e.id = er.engineering_id
+        where
+            er.status = 1
+            and e.status = 1
+    </select>
+    <delete id="deleteList">
+        DELETE FROM base_engineering_ranage WHERE engineering_id = #{engineeringCode}
+    </delete>
+    <select id="selectRanageList" resultType="com.bimforest.ems.modules.base.entity.BaseEngineeringRanage">
+
+        select * from  base_engineering_ranage where  engineering_id = #{id}
+    </select>
+
+
+
+</mapper>

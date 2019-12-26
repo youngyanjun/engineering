@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.SysWeatherForecastMapper">
+
+    <insert id="insertBatch" parameterType="com.bimforest.ems.modules.sys.entity.SysWeatherForecast">
+        insert into
+        sys_weather_forecast
+        (
+        predict_date,
+        condition_day,
+        temp_day,
+        wind_dir_day,
+        wind_speed_day,
+        updatetime,
+        city_id,
+        longitude,
+        latitude
+        )
+        VALUES
+        <foreach collection="list" index="index" item="item" separator=",">
+            (
+            #{item.predictDate,jdbcType=VARCHAR},
+            #{item.conditionDay,jdbcType=VARCHAR},
+            #{item.tempDay,jdbcType=VARCHAR},
+            #{item.windDirDay,jdbcType=VARCHAR},
+            #{item.windSpeedDay,jdbcType=VARCHAR},
+            #{item.updatetime,jdbcType=VARCHAR},
+            #{item.cityId,jdbcType=INTEGER},
+            #{item.longitude,jdbcType=VARCHAR},
+            #{item.latitude,jdbcType=VARCHAR}
+            )
+        </foreach>
+        ON CONFLICT(predict_date,longitude,latitude)
+        DO UPDATE SET
+        condition_day = EXCLUDED.condition_day,
+        temp_day = EXCLUDED.temp_day,
+        wind_dir_day = EXCLUDED.wind_dir_day,
+        wind_speed_day = EXCLUDED.wind_speed_day,
+        updatetime = EXCLUDED.updatetime,
+        city_id = EXCLUDED.city_id,
+        longitude = EXCLUDED.longitude,
+        latitude = EXCLUDED.latitude
+    </insert>
+
+    <select id="queryReportForecast" resultType="com.bimforest.ems.modules.sys.entity.SysWeatherForecast">
+        select
+        predict_date,
+        condition_day,
+        temp_day,
+        wind_dir_day,
+        wind_speed_day,
+        updatetime,
+        city_id,
+        longitude,
+        latitude
+        from
+        sys_weather_forecast swf
+        where
+          swf.latitude = #{latitude}
+        and
+          swf.longitude = #{longitude}
+        <if test="predictDates != null" >
+            and predict_date in
+            <foreach collection="predictDates" index="index" item="predictDate" open="(" separator="," close=")">
+                #{predictDate}
+            </foreach>
+        </if>
+    </select>
+
+</mapper>

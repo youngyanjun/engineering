@@ -1,0 +1,31 @@
+$checkbox-namespace: 'ls-checkbox';
+
+.#{$checkbox-namespace} {
+  display: inline-block;
+
+  &-prefix {
+    display: inline-block;
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #E6E7EC;
+    vertical-align: middle;
+  }
+
+  &.is-checked &-prefix {
+    position: relative;
+    border-color: #55A8FD;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      background-color: #55A8FD;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

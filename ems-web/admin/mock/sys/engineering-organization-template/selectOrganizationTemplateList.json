@@ -1,0 +1,66 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [{
+    "id": "2a34dd8de5a4dda0812e18e10758a7ea",
+    "parentId": "",
+    "child": [{
+      "id": "24f7c3a6df7b8434ba8cee3cc33baa67",
+      "parentId": "2a34dd8de5a4dda0812e18e10758a7ea",
+      "child": [{
+        "id": "af37eaeb2cccc816690d9b95982e5b09",
+        "parentId": "24f7c3a6df7b8434ba8cee3cc33baa67",
+        "child": null,
+        "name": "test实体set试探试探",
+        "remark": "stethoscopet"
+      }],
+      "name": "xianguminghcneg",
+      "remark": null
+    }, {
+      "id": "1043294ceb74a4c5b269cdfed3618ee7",
+      "parentId": "2a34dd8de5a4dda0812e18e10758a7ea",
+      "child": [{
+        "id": "9dead037929dc8ab6237d2342e2588cc",
+        "parentId": "1043294ceb74a4c5b269cdfed3618ee7",
+        "child": null,
+        "name": "string",
+        "remark": null
+      }, {
+        "id": "4e0144765d0e440362eda0f167d3f917",
+        "parentId": "1043294ceb74a4c5b269cdfed3618ee7",
+        "child": null,
+        "name": "string",
+        "remark": "24"
+      }],
+      "name": "xianguminghcneg",
+      "remark": null
+    }, {
+      "id": "71ffcc40250ebd181ebb37fe9b87443a",
+      "parentId": "2a34dd8de5a4dda0812e18e10758a7ea",
+      "child": null,
+      "name": "string",
+      "remark": "12132"
+    }],
+    "name": "xianguminghcneg",
+    "remark": null
+  }, {
+    "id": "63be2454ad29291d4f05f31c4dfc02ed",
+    "parentId": "",
+    "child": [{
+      "id": "5d2c6649440d8dace273e941283069d7",
+      "parentId": "63be2454ad29291d4f05f31c4dfc02ed",
+      "child": [{
+        "id": "e23caebdf9eb6f41acbce9a51bf7d108",
+        "parentId": "5d2c6649440d8dace273e941283069d7",
+        "child": null,
+        "name": "33",
+        "remark": "333"
+      }],
+      "name": "222",
+      "remark": "222"
+    }],
+    "name": "1111",
+    "remark": ""
+  }]
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.SysMessageMapper">
+
+    <select id="selectSysMessagesByUserId" resultType="com.bimforest.ems.modules.sys.vo.SysMessageSelectVO">
+           select
+                sm.id,
+                sm."content",
+                sm.create_date,
+                sm.read_flag,
+                '周报' as source
+            from
+                sys_message sm
+            where
+                sm.status =1
+            and
+                sm.receiver_id = #{userId}
+    </select>
+
+    <select id="selectUnReadMessageAmountForLoginUser" resultType="integer">
+           select
+                count(sm.id)
+            from
+                sys_message sm
+            where
+                sm.status = 1
+            and
+                sm.read_flag = false
+            and
+                sm.receiver_id = #{userId}
+    </select>
+
+    <select id="getSysMessageById" resultType="com.bimforest.ems.modules.sys.vo.SysMessageSelectVO">
+           select
+                sm."content",
+                su.user_name,
+                sm.create_date,
+                sm.read_flag,
+                '周报' as source
+            from
+                sys_message sm
+            left join sys_user su on
+                su.id = sm.receiver_id
+            where
+            sm.id=#{id}
+    </select>
+
+    <update id="updateReadFlag">
+        update sys_message
+        <set >
+            read_flag=true
+        </set>
+        where
+        <if test="messageIds != null" >
+             id in
+            <foreach collection="messageIds" index="index" item="messageId" open="(" separator="," close=")">
+                #{messageId}
+            </foreach>
+        </if>
+    </update>
+
+    <update id="delete">
+        update sys_message
+        <set >
+            status = -1,
+            update_date = now(),
+            update_by = #{updateUser}
+        </set>
+        where
+        status = 1
+        <if test="messageIds != null" >
+            and id in
+            <foreach collection="messageIds" index="index" item="messageId" open="(" separator="," close=")">
+                #{messageId}
+            </foreach>
+        </if>
+    </update>
+
+</mapper>

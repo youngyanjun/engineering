@@ -1,0 +1,43 @@
+@import '@/styles/variable.scss';
+
+.content {
+  :global(.ls-dialog-bd) {
+    overflow-y: visible;
+  }
+
+  :global(.ls-radio) {
+    margin-right: rpx(8);
+    width: rpx(66);
+    height: rpx(32);
+    border: rpx(1) solid #D4D7E1;
+    border-radius: rpx(4);
+    font-size: rpx(14);
+    color: rgba(68, 82, 121, .64);
+    line-height: rpx(32);
+    text-align: center;
+    cursor: pointer;
+
+    &-prefix {
+      display: none;
+    }
+
+    &:global(.is-checked) {
+      color: #fff;
+
+      &:nth-child(1) {
+        background-color: #55A8FD;
+        border-color: #55A8FD;
+      }
+      
+      &:nth-child(2) {
+        background-color: #2CC837;
+        border-color: #2CC837;
+      }
+      
+      &:nth-child(3) {
+        background-color: #445279;
+        border-color: #445279;
+      }
+    }
+  }
+}

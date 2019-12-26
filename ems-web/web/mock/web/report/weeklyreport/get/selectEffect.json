@@ -1,0 +1,9 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": null,
+    "effect": "[{\"content\":\"2\"}]"
+  }
+}

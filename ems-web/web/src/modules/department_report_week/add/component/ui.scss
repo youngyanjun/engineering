@@ -1,0 +1,82 @@
+@import '@/styles/variable.scss';
+
+.content {
+  background-color: #F5F6F8;
+}
+
+.hd {
+  margin-bottom: rpx(16);
+  font-size: rpx(16);
+  font-weight: bold;
+  background-color: #fff;
+  line-height: rpx(48);
+  text-align: center;
+}
+
+.bd {
+  background-color: #fff;
+}
+
+.content {
+  :global(.bh-excel-th .bh-excel-input) {
+    font-weight: bold;
+    color: #445279;
+  }
+
+  :global(.bh-excel-bd .bh-excel-label) {
+    min-height: rpx(80);
+  }
+}
+
+.field {
+  margin-bottom: rpx(40);
+
+  &-hd {
+    margin-bottom: rpx(40);
+    padding: 0 rpx(40);
+    font-size: rpx(16);
+    color: #445279;
+    height: rpx(18);
+    
+    &>span {
+      vertical-align: middle;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      margin-right: rpx(8);
+      width: rpx(4);
+      height: 100%;
+      background-color: #FF5D5D;
+      vertical-align: middle;
+    }
+  }
+}
+
+.rejection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &-item {
+    margin-bottom: rpx(24);
+    border-radius: rpx(4);
+    width: rpx(892);
+  }
+
+  &-title {
+    font-size: rpx(14);
+    font-weight: bold;
+    line-height: rpx(32);
+  }
+
+  &-detail {
+    box-sizing: border-box;
+    padding: rpx(8) rpx(16);
+    min-height: rpx(80);
+    border: 1px solid #E1E2E9;
+    font-size: rpx(16);
+    color: rgba(68, 82, 121, .64);
+  }
+}

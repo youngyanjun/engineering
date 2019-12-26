@@ -1,0 +1,74 @@
+@import '@/styles/variable.scss';
+
+.drag-stage {
+  position: relative;
+}
+
+.drag-item {
+  position: relative;
+  display: flex;
+  margin-bottom: rpx(16);
+  align-items: center;
+  justify-content: space-between;
+
+  :global(.ls-input) {
+    width: 94%;
+  }
+}
+
+.drag-prex {
+  cursor: pointer;
+  
+  &:before {
+    content: '\e646';
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #D4D7E1;
+  }
+}
+
+
+.drag-suffix {
+  margin-left: rpx(8);
+  cursor: pointer;
+
+  &:before {
+    content: '\e622';
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-size: rpx(10);
+    color: #D4D7E1;
+  }
+}
+
+
+.title {
+  box-sizing: border-box;
+  margin-bottom: rpx(16);
+  width: 100%;
+  
+  :global(.ls-input-content) {
+    height: rpx(32);
+    font-size: rpx(14);
+    color: #445279;
+    line-height: rpx(32);
+  }
+}
+
+.detail {
+  margin-bottom: rpx(16);
+  font-size: rpx(14);
+  color: rgba(68, 82, 121, .64);
+}
+
+.add {
+  display: block;
+  margin: 0 auto rpx(32);
+  width: 94%;
+  border: rpx(1) dashed  #D4D7E1;
+  font-size: rpx(14);
+  color: rgba(68, 82, 121, .24);
+}

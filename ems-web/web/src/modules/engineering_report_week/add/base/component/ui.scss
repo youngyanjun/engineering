@@ -1,0 +1,15 @@
+@import '@/styles/variable.scss';
+
+.content {}
+
+.help {
+  
+  &-section {
+    padding: rpx(30) rpx(46); 
+    font-size: rpx(14);
+  }
+
+  &-group {
+    line-height: rpx(32);
+  }
+}

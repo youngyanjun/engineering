@@ -1,0 +1,83 @@
+@import '@/styles/variable.scss';
+
+// 布局
+.content {
+  display: flex;
+  padding: rpx(40);
+}
+
+.aside {
+  margin-right: rpx(50);
+  width: rpx(600);
+}
+
+.main {
+  position: relative;
+}
+
+// 表单
+.group {
+  display: flex;
+  margin-bottom: rpx(24);
+  font-size: rpx(14);
+  color: #445279;
+
+  &:global(.is-require) {
+    &::after {
+      content: '*';
+      margin-left: rpx(8);
+      color: $danger;
+      line-height: rpx(32);
+    }
+  }
+
+  &-label {
+    display: inline-block;
+    margin-right: rpx(8);
+    min-width: rpx(90);
+    line-height: rpx(32);
+  }
+
+  &-value {
+    width: rpx(440);
+    line-height: rpx(32);
+  }
+}
+
+.btns {
+  :global(.ls-button) {
+    margin-bottom: rpx(8);
+  }
+}
+
+.position {
+  :global(.ls-input-suffix)::before {
+    content: '\e61d';
+    font-family: iconfont;
+    font-size: rpx(18);
+    color: #55A8FD;
+    line-height: rpx(20);
+  }
+}
+
+// 地图
+.map {
+  width: rpx(640);
+  height: rpx(480);
+}
+
+.search {
+  position: absolute;
+  top: rpx(8);;
+  left: rpx(8);;
+  width: rpx(220);
+  background-color: #fff;
+  z-index: 1;
+  
+  :global(.ls-input-append) {
+    background-color: #298DFF;
+    color: #fff;
+    line-height: rpx(30);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.base.mapper.BaseStructureUserMapper">
+
+
+    <update id="delete">
+        update base_structure_user
+        <set >
+            status = -1,
+            update_date = now(),
+            update_by = #{updateUser}
+        </set>
+        where
+          status = 1
+        and
+          structure_id=#{structureId}
+        <if test="userIds != null" >
+            and user_id in
+            <foreach collection="userIds" index="index" item="userId" open="(" separator="," close=")">
+                #{userId}
+            </foreach>
+        </if>
+    </update>
+
+    <update id="deleteByOrgId">
+        update base_structure_user
+        <set >
+            status = -1,
+            update_date = now(),
+            update_by = #{updateUser}
+        </set>
+        where
+        status = 1
+        and
+        structure_id in(select id from base_structure bs where bs.org_id=#{orgId})
+        <if test="userIds != null" >
+            and user_id in
+            <foreach collection="userIds" index="index" item="userId" open="(" separator="," close=")">
+                #{userId}
+            </foreach>
+        </if>
+    </update>
+
+    <insert id="insertBatch" parameterType="java.util.List">
+        insert into
+        base_structure_user
+        (
+        id,
+        user_id,
+        structure_id,
+        create_by
+        )
+        VALUES
+        <foreach collection="list" index="index" item="item" separator=",">
+            (
+            #{ item.id},
+            #{ item.userId},
+            #{ item.structureId },
+            #{ item.createBy}
+            )
+        </foreach>
+    </insert>
+
+</mapper>

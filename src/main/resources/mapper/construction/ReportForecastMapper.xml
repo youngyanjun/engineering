@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.construction.mapper.ReportForecastMapper">
+
+    <select id="queryReportForecast" resultType="com.bimforest.ems.modules.construction.vo.ReportForecastVO" parameterType="com.bimforest.ems.modules.construction.vo.ReportForecastSelectVO">
+       select
+            swf.predict_date,
+            case
+                when rf.temp_day is not null then rf.temp_day
+                else swf.temp_day
+            end,
+            case
+                when rf.condition_day is not null then rf.condition_day
+                else swf.condition_day
+            end,
+            case
+                when rf.wind_dir_day is not null then rf.wind_dir_day
+                else swf.wind_dir_day
+            end
+        from
+            sys_weather_forecast swf
+        left join report_forecast rf on
+            swf.latitude = rf.latitude
+            and swf.longitude = rf.longitude
+            and swf.predict_date = rf.predict_date
+            and rf.report_id = #{reportId}
+            and rf.status=1
+        where
+            swf.latitude = #{latitude}
+          and
+            swf.longitude = #{longitude}
+          and
+            swf.predict_date >= #{startDate}
+          and
+            swf.predict_date <![CDATA[ <= ]]> #{endDate}
+    </select>
+
+    <insert id="insertBatch" parameterType="com.bimforest.ems.modules.construction.entity.ReportForecast">
+        insert into
+        report_forecast
+        (
+            id,
+            report_id,
+            predict_date,
+            condition_day,
+            temp_day,
+            wind_dir_day,
+            wind_speed_day,
+            longitude,
+            latitude
+        )
+        VALUES
+        <foreach collection="list" index="index" item="item" separator=",">
+            (
+            #{item.id,jdbcType=VARCHAR},
+            #{item.reportId,jdbcType=VARCHAR},
+            #{item.predictDate,jdbcType=VARCHAR},
+            #{item.conditionDay,jdbcType=VARCHAR},
+            #{item.tempDay,jdbcType=VARCHAR},
+            #{item.windDirDay,jdbcType=VARCHAR},
+            #{item.windSpeedDay,jdbcType=VARCHAR},
+            #{item.longitude,jdbcType=VARCHAR},
+            #{item.latitude,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+
+    <update id="updateStatusByStatus">
+        update report_forecast
+        <set >
+            status = #{toStatus,jdbcType=INTEGER}
+        </set>
+        where
+          status = #{fromStatus,jdbcType=INTEGER}
+        and
+          report_id = #{reportId,jdbcType=INTEGER}
+    </update>
+
+
+</mapper>

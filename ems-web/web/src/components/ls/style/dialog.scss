@@ -1,0 +1,125 @@
+// dialog
+$dialog-namespace: 'ls-dialog';
+
+.#{$dialog-namespace} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  
+  &-innerwrap {
+    display: table-cell;
+    vertical-align: middle; 
+  }
+
+  &.up-enter-active {
+    transition: .3s;
+
+    .#{$dialog-namespace}-content.is-center {
+      transition: all .3s;
+    }
+  }
+
+  &.up-enter {
+    .#{$dialog-namespace}-content.is-center {
+      transform: scale(0.1);
+    }
+  }
+
+  &-content {
+    position: relative;
+    margin: 0 auto;
+    z-index: 2001;
+
+    &.is-bottom {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: none;
+    }
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 2000;
+  }
+
+  &-hd {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #445279;
+  }
+
+  &-ft {
+    text-align: center;
+  }
+
+  &-close {
+    float: right;
+    position: relative;
+    margin: 3px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  &-close:hover::before, &-close:hover::after { 
+    background: #55A8FD;
+  }
+
+  &-close:before {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 20px;
+      background: #55A8FD;
+      transform: rotate(45deg);
+      top: 1px;
+      left: 11px;
+  }
+
+  &-close:after{
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background: #55A8FD;
+      transform: rotate(-45deg);
+      top: 1px;
+      left: 11px;
+  }
+
+  &-submit,
+  &-cancel {
+    display: inline-block;
+    margin: 0 8px;
+    width: 60px;
+    height: 28px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 14;
+    cursor: pointer;
+  }
+
+  &-cancel {
+    border-color: #D4D7E1;
+    background-color: #fff;
+    color: #445279;
+  }
+
+  &-submit {
+    border-color: #55A8FD;
+    background-color: #55A8FD;
+    color: #fff;
+  }
+}

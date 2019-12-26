@@ -1,0 +1,24 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "records": [
+      {
+        "id": "13ce75c6c35a8adb3c4109a2338937f7",
+        "updateDate": null,
+        "status": "1",
+        "reportName": "设计院第8月报",
+        "reportType": "1",
+        "month": 12,
+        "weekly": null
+      }
+    ],
+    "total": 1,
+    "size": 10,
+    "current": 1,
+    "orders": [],
+    "searchCount": true,
+    "pages": 1
+  }
+}

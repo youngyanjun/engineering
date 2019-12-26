@@ -1,0 +1,6 @@
+{
+  "errorCode": "string",
+  "errorMsg": "string",
+  "result": {},
+  "status": "SUCCESS"
+}

@@ -1,0 +1,165 @@
+@import '@/styles/variable.scss';
+
+$contentHeight: rpx(80);
+
+.content {
+  height: 100%;
+}
+
+.hd {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 rpx(2) rpx(6) rgba(0, 21, 41, .08);
+}
+
+.bd {
+  position: relative;
+  width: 100%;
+  padding-bottom: rpx(16);
+  background-color: #F5F6F8;
+  
+  &:before {
+    content: '';
+    display: table;
+  }
+}
+
+.title {
+  margin-right: rpx(12);
+  line-height: rpx(48);
+  font-size: rpx(16);
+  color: #445279;
+
+  &-icon {
+    display: inline-block;
+    margin-left: rpx(12);
+    width: rpx(24);
+    height: rpx(24);
+    background: url(~@/assets/images/logo_bimforest.png) no-repeat center / auto 100%;
+    vertical-align: middle;
+  }
+
+  &-tips {
+    font-size: rpx(12);
+    color: rgba(68, 82, 121, .48);
+  }
+}
+
+.aside {
+  position: absolute;
+  top: rpx(16);
+  left: rpx(16);
+  
+  :global(.ls-radio) {
+    width: 100%;
+  }
+  
+  :global(.ls-radio-prefix) {
+    display: none;
+  }
+}
+
+.menu {
+  width: rpx(160);
+  height: rpx(440);
+  background-color: #fff;
+  color: rgba(68, 82, 121, .64);
+  box-shadow: 0 rpx(1) rpx(3) rgba(0, 28, 41, .08);
+  text-align: center;
+  font-size: rpx(14);
+
+  :global(.ls-radio) {
+    line-height: rpx(40);
+    cursor: pointer;
+
+    &:global(.is-checked) {
+      background-color: #E3F1FF;
+      color: #445279;
+    }
+  }
+}
+
+.main {
+  margin: rpx(16) auto 0;
+  margin-left: rpx(216);
+  margin-right: rpx(440);
+  max-width: rpx(1124);
+  min-width: rpx(780);
+  background-color: #fff;
+  height: calc(100% - #{$contentHeight});
+  color: #445279;
+
+  &-hd {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: rpx(24);
+    line-height: rpx(48);
+    box-shadow: 0 rpx(2) rpx(6) rgba(0, 21, 41, .08);
+  }
+}
+
+.other {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin-right: rpx(17);
+  height: rpx(48);
+
+  :global(.ls-button) {
+    margin-right: rpx(16);
+  }
+}
+
+.portrait {
+  margin-left: rpx(25);
+  width: rpx(34);
+  height: rpx(34);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.user-pop {
+  position: absolute;
+  top: rpx(70);
+  right: rpx(16);
+  width: rpx(100);
+  padding: rpx(4);
+  background-color: #fff;
+  border-radius: rpx(8);
+  z-index: 9;
+  text-align: center;
+}
+
+@media print {
+  body {
+    font-size: rpx(14)!important;
+    size: A4;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .hd {
+    display: none;
+  }
+
+  .bd {
+    background-color: #fff;
+  }
+
+  .main {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 100%;
+    overflow-y: visible;
+  }
+
+  :global(.a4) {
+    page-break-before: auto;        
+    page-break-after: always;
+  }
+}

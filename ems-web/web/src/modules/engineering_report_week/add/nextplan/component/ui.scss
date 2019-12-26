@@ -1,0 +1,18 @@
+@import '@/styles/variable.scss';
+
+.content {}
+
+.help {
+  &-hd {
+    margin-bottom: rpx(8);
+    padding-left: rpx(16);
+    font-size: rpx(14);
+    color: #fff;
+    background-color: #55A8FD;
+    line-height: rpx(28);
+  }
+
+  .field-hd {
+    padding-left: rpx(16);
+  }
+}

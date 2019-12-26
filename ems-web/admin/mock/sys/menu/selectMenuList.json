@@ -1,0 +1,206 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [{
+    "id": "33",
+    "parentId": "0",
+    "child": [{
+      "id": "34",
+      "parentId": "33",
+      "child": null,
+      "remark": "查看工程报表",
+      "menuName": "查看工程报表",
+      "selection": "25",
+      "relatePages": "工程报表（公司部门）| 查看工程报表"
+    }, {
+      "id": "35",
+      "parentId": "33",
+      "child": null,
+      "remark": "查看周报",
+      "menuName": "查看周报",
+      "selection": "26",
+      "relatePages": "工程报表（公司部门）| 查看周报"
+    }, {
+      "id": "36",
+      "parentId": "33",
+      "child": null,
+      "remark": "新建周报",
+      "menuName": "新建周报",
+      "selection": "28",
+      "relatePages": "工程报表（公司部门）| 新建周报"
+    }, {
+      "id": "37",
+      "parentId": "33",
+      "child": null,
+      "remark": "查看月报",
+      "menuName": "查看月报",
+      "selection": "29",
+      "relatePages": "工程报表（公司部门）| 查看月报"
+    }, {
+      "id": "38",
+      "parentId": "33",
+      "child": null,
+      "remark": "新建月报",
+      "menuName": "新建月报",
+      "selection": "30",
+      "relatePages": "工程报表（公司部门）| 新建月报"
+    }],
+    "remark": "工程报表（公司部门）",
+    "menuName": "工程报表（公司部门）",
+    "selection": "24",
+    "relatePages": "工程报表（公司部门）"
+  }, {
+    "id": "39",
+    "parentId": "0",
+    "child": [{
+      "id": "19",
+      "parentId": "39",
+      "child": null,
+      "remark": "报表列表",
+      "menuName": "周报列表",
+      "selection": "8",
+      "relatePages": "工程报表管理 | 查看工程报表"
+    }, {
+      "id": "20",
+      "parentId": "39",
+      "child": null,
+      "remark": "新建周报",
+      "menuName": "新建周报",
+      "selection": "9",
+      "relatePages": "周报管理 | 新建周报"
+    }, {
+      "id": "21",
+      "parentId": "39",
+      "child": null,
+      "remark": "查看周报",
+      "menuName": "查看周报",
+      "selection": "12",
+      "relatePages": "周报管理 | 查看周报"
+    }, {
+      "id": "22",
+      "parentId": "39",
+      "child": null,
+      "remark": "新建月报",
+      "menuName": "新建月报",
+      "selection": "13",
+      "relatePages": "月报管理 | 新建周报"
+    }, {
+      "id": "23",
+      "parentId": "39",
+      "child": null,
+      "remark": "查看月报",
+      "menuName": "查看月报",
+      "selection": "14",
+      "relatePages": "月报管理 | 查看周报"
+    }, {
+      "id": "24",
+      "parentId": "39",
+      "child": null,
+      "remark": "查看月度形象进度表",
+      "menuName": "查看月度形象进度表",
+      "selection": "15",
+      "relatePages": "工程报表管理 | 查看月度形象进度表"
+    }, {
+      "id": "25",
+      "parentId": "39",
+      "child": null,
+      "remark": "新建月度形象进度表",
+      "menuName": "新建月度形象进度表",
+      "selection": "16",
+      "relatePages": "工程报表管理 | 新建月度形象进度表"
+    }],
+    "remark": "工程报表（项目部）",
+    "menuName": "工程报表（项目部）",
+    "selection": "31",
+    "relatePages": "工程报表（项目部）"
+  }, {
+    "id": "26",
+    "parentId": "0",
+    "child": [{
+      "id": "27",
+      "parentId": "26",
+      "child": null,
+      "remark": "查看工程报表收集",
+      "menuName": "查看工程报表收集",
+      "selection": "18",
+      "relatePages": "工程报表收集 | 查看工程报表收集"
+    }, {
+      "id": "28",
+      "parentId": "26",
+      "child": null,
+      "remark": "审查汇总表",
+      "menuName": "审查汇总表",
+      "selection": "19",
+      "relatePages": "工程报表收集 | 审查汇总表"
+    }],
+    "remark": "工程收集",
+    "menuName": "查看工程报表收集",
+    "selection": "17",
+    "relatePages": "工程报表收集"
+  }, {
+    "id": "29",
+    "parentId": "0",
+    "child": [{
+      "id": "30",
+      "parentId": "29",
+      "child": null,
+      "remark": "查看产值和收付款",
+      "menuName": "查看产值和收付款",
+      "selection": "21",
+      "relatePages": "产值和收付款 | 查看产值和收付款"
+    }, {
+      "id": "31",
+      "parentId": "29",
+      "child": null,
+      "remark": "录入收付款数据",
+      "menuName": "录入收付款数据",
+      "selection": "22",
+      "relatePages": "产值和收付款 | 录入收付款数据"
+    }, {
+      "id": "32",
+      "parentId": "29",
+      "child": null,
+      "remark": "提交收支计划表",
+      "menuName": "提交收支计划表",
+      "selection": "23",
+      "relatePages": "产值和收付款 | 提交收支计划表"
+    }],
+    "remark": "产值和收付款",
+    "menuName": "产值和收付款",
+    "selection": "20",
+    "relatePages": "产值和收付款"
+  }, {
+    "id": "40",
+    "parentId": "0",
+    "child": [{
+      "id": "43",
+      "parentId": "40",
+      "child": null,
+      "remark": "编辑基本信息",
+      "menuName": "编辑基本信息",
+      "selection": "35",
+      "relatePages": "组织配置 | 编辑基本信息"
+    }, {
+      "id": "41",
+      "parentId": "40",
+      "child": null,
+      "remark": "查看组织配置",
+      "menuName": "查看组织配置",
+      "selection": "33",
+      "relatePages": "组织配置 | 查看组织配置"
+    }, {
+      "id": "42",
+      "parentId": "40",
+      "child": null,
+      "remark": "人员管理",
+      "menuName": "人员管理",
+      "selection": "34",
+      "relatePages": "组织配置 | 人员管理"
+    }],
+    "remark": "组织配置",
+    "menuName": "组织配置",
+    "selection": "32",
+    "relatePages": "组织配置"
+  }]
+}

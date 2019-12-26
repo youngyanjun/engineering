@@ -1,0 +1,120 @@
+.bh-excel {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid rgba(68, 82, 121, .05);
+  border-bottom: none;
+  width: 100%;
+
+  &-hd {
+    background: rgba(68, 82, 121, .04);
+  }
+
+  &-bd {
+    width: 100%;
+  }
+  
+  &-th,
+  &-td {
+    position: relative;
+    display: table-cell;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(68, 82, 121, .05);
+    border-bottom: 1px solid rgba(68, 82, 121, .05);
+    word-wrap: break-word;
+    line-height: 2em;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+
+  &-th,
+  &-td {
+    word-break: break-all;
+    
+    &>span{
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.is-row0 {
+      display: none;
+    }
+    
+    &.is-column0 {
+      display: none;
+    }
+  }
+
+  &-bd &-tr:nth-child(2n) {
+    background:rgba(68, 82, 121, .04)
+  }
+
+  &-th.is-align-center &-input,
+  &-td.is-align-center &-input {
+    text-align: center;
+  }
+
+  &-th.is-align-left &-input,
+  &-td.is-align-left &-input {
+    text-align: left;
+  }
+
+  &-th.is-align-right &-input,
+  &-td.is-align-right &-input {
+    text-align: right;
+  }
+
+  &-input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    visibility: visible;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-clipboard {
+    display: block;
+    margin: 0;
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+  }
+
+  &-label,
+  &-input {
+    display: inline-block;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2em;
+    min-height: 32px;
+  }
+
+  &-label {
+    width: 100%;
+    visibility: hidden;
+  }
+  
+  &-td.is-active &-input {
+    border: 1px solid #55A8FD;
+  }
+}

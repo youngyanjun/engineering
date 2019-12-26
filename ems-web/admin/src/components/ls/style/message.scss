@@ -1,0 +1,46 @@
+@import './common/variable.scss';
+
+.#{$message-namespace}{
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: all 1s 2s;
+  z-index: 3000;
+  pointer-events: none;
+
+  &-inner {
+    display: inline-block;
+    min-width: 380px;
+    padding: 15px 15px 15px 20px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left;
+    pointer-events: initial;
+  }
+
+  &.is-info &-inner {
+    border-color: $message-info-border-color;
+    background-color: $message-info-background-color;
+    color: $message-info-color;
+  }
+
+  &.is-success &-inner {
+    border-color: $message-success-border-color;
+    background-color: $message-success-background-color;
+    color: $message-success-color;
+  }
+
+  &.is-warning &-inner {
+    border-color: $message-warning-border-color;
+    background-color: $message-warning-background-color;
+    color: $message-warning-color;
+  }
+
+  &.is-error &-inner {
+    border-color: $message-error-border-color;
+    background-color: $message-error-background-color;
+    color: $message-error-color;
+  }
+}

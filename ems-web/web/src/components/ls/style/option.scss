@@ -1,0 +1,18 @@
+// option
+$option-namespace: 'ls-option';
+
+.#{$option-namespace} {
+  padding: 0 15px;
+  color: #445279;
+  text-align: left;
+  cursor: pointer;
+
+  &.is-active {
+    font-weight: bold;
+    color: #55A8FD;
+  }
+
+  &:hover {
+    background-color: #F5F6F8;
+  }
+}

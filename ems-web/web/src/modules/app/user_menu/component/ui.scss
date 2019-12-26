@@ -1,0 +1,104 @@
+@import "@/styles/variable.scss";
+.content {
+  display: inline-block;
+  outline: none;
+    .user_pic {
+      display: inline-block;
+      border-radius: 50%;
+      background: rgb(106, 175, 255);
+      text-align: center;
+      line-height: 1;
+      padding: rpx(10);
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      cursor: pointer;
+    }
+}
+.portrait {
+    width: rpx(34);
+    height: rpx(34);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-top: rpx(-6);
+  }
+  
+  .user-pop {
+    position: absolute;
+    top: 100%;
+    line-height: initial;
+    right: rpx(16);
+    width: rpx(254);
+    padding: rpx(24);
+    background-color: #fff;
+    border-radius: rpx(8);
+    z-index: 9;
+    border: 1px solid #e6e7ec;
+    box-shadow: 0 2px 6px rgba(0, 21, 41, 0.08);
+    border-radius: 4px;
+    .user_top {
+      overflow: hidden;
+    }
+    .user_pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 4px rgba(47, 84, 235, 0.16);
+      float: left;
+      background: rgb(106, 175, 255);
+      text-align: center;
+      line-height: 61px;
+    }
+    .user_info {
+      float: left;
+      text-align: left;
+      margin: 8px 0 0 16px;
+    }
+    .user_name {
+      font-size: 20px;
+      line-height: 42px;
+    }
+    .user_role {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.25);
+      line-height: 17px;
+    }
+  
+    .carve_line{
+      height: 1px;
+      width: 100%;
+      background:#e6e6e6; 
+      margin: 24px auto;
+    }
+    .personal_data {
+      cursor: pointer;
+      &:not(:last-child){
+        margin-bottom: 24px;
+      }
+      > span {
+        font-size: 16px;
+        line-height: 21px;
+        vertical-align: middle;
+        margin-left: 16px;
+      }
+    }
+  }
+  .userIcon{
+    &:before {
+      content: "\e615";
+      font-family: "iconfont" !important;
+      font-size: 24px;
+      vertical-align: middle;
+      font-style: normal;
+      color: rgba(0,0,0,0.85);
+    }
+  }
+  .exitIcon{
+    &:before {
+      content: "\e618";
+      font-family: "iconfont" !important;
+      font-size: 24px;
+      vertical-align: middle;
+      font-style: normal;
+      color: #FF0034;
+    }
+  }

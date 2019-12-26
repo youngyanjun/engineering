@@ -1,0 +1,314 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "records": [{
+      "id": "2",
+      "name": "李四",
+      "gather": null,
+      "managerName": "cheng1",
+      "managerPhone": "190838383383",
+      "createDate": "2019-11-13 00:00:00",
+      "engineeringCode": null,
+      "engineeringAbbreviation": null,
+      "contentPrice": null
+    }, {
+      "id": "1",
+      "name": "张三",
+      "gather": null,
+      "managerName": "cheng1",
+      "managerPhone": "190838383383",
+      "createDate": "2019-11-13 00:00:00",
+      "engineeringCode": null,
+      "engineeringAbbreviation": null,
+      "contentPrice": null
+    }, {
+      "id": "44",
+      "name": "oooo",
+      "gather": null,
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": null,
+      "engineeringCode": "oooo",
+      "engineeringAbbreviation": "oooo",
+      "contentPrice": "113.00"
+    }, {
+      "id": "73d0fcf958702a3ccc2e17c1ad3c6ce6",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-13 00:00:00",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "32ecb6db2c144c3153bed555f7e2c85c",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-13 00:00:00",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "111.8847"
+    }, {
+      "id": "e9621033ae50d94b50e10e65a95d96fb",
+      "name": "3333",
+      "gather": null,
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-13 00:00:00",
+      "engineeringCode": "333",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "33"
+    }, {
+      "id": "097d55688f9c9dbb8c14c060c7e505d3",
+      "name": null,
+      "gather": null,
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": null,
+      "engineeringAbbreviation": null,
+      "contentPrice": null
+    }, {
+      "id": "f4f2379db8ff6ae1d19ff0968620ce4c",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "387d53c16caaf174d9ad60132241de2f",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "d73cdb44103a5bc2989e1ccc4348d29c",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "d00883a0e05cb36b1f30a5a79326c6f0",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "025137809ef1b385b271613e5369a2c0",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "e5a84f025242a50fac72d62cc26ac984",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "9332fe3d548dc2409fafddd86dd81177",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "3a3b3fef37afb059e642a29b571c813a",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "a75ad7261fec9d0b2b56e5e2a143f93b",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "d727fafcb907fcb28771e81f904321d1",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "664c82c8b1cbe5c46e4f238b59ea5430",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "254a88cd4440be0a7cf285f3b33640f7",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "38679862b7537943d31f1c5fac695fca",
+      "name": "xianguminghcneg",
+      "gather": "8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8;8",
+      "managerName": "tom",
+      "managerPhone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "yangyanxuinISD",
+      "engineeringAbbreviation": "jiancheng",
+      "contentPrice": "111"
+    }, {
+      "id": "aa9cabfb0caaaf3117b8cd1797e934cd",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "b7615187d778708aaadf503861d3ef55",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 00:00:00",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "11aede383d343fb79edf81e39e49eaae",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:11:53",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "a77bd99dfc56736f4018c53d9fce0ab8",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:14:15",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "9dedc1c046b47050794e42f7b9cb7dcf",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:15:07",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "bd3d53ed222b6eb497f0e8fc566bfa68",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:16:45",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "47eaa67d6005104be5347218d61a3dc3",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:17:15",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "c692716ab66bd6539022563ab2937ce9",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:17:31",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "0c75ad150a6accdcbbf208a73710cff6",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:17:59",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }, {
+      "id": "f778c3c7c560440e78a49dcdfa9aa465",
+      "name": "string",
+      "gather": "string;string;string;string",
+      "managerName": null,
+      "managerPhone": null,
+      "createDate": "2019-11-14 16:19:43",
+      "engineeringCode": "string",
+      "engineeringAbbreviation": "string",
+      "contentPrice": "string"
+    }],
+    "total": 30,
+    "size": 500,
+    "current": 1,
+    "orders": [],
+    "searchCount": true,
+    "pages": 1
+  }
+}

@@ -1,0 +1,132 @@
+@import "@/styles/variable.scss";
+
+.content {
+  display: flex;
+  height: 100%;
+  overflow-y: hidden;
+  background: rgba(249,250,251,1);
+}
+
+.aside {
+  min-height: 100%;
+  background-color: #273867;
+  color: #fff;
+}
+
+
+.logo {
+  margin: rpx(12);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+
+  &-hd {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: rpx(24);
+    line-height: rpx(48);
+    height: rpx(48);
+    box-shadow: 0 rpx(2) rpx(6) rgba(0, 21, 41, 0.08);
+  }
+
+  &-bd {
+    background: #fff;
+  }
+}
+
+.logo{
+  margin:rpx(12);
+  vertical-align: middle;
+}
+.other {
+  float: right;
+  margin-right: rpx(48);
+}
+
+.help {
+  margin-right: rpx(24);
+  vertical-align: middle;
+
+  &:before {
+    content: "\e620";
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    color: #dadbe1;
+  }
+}
+
+.feedback {
+  margin-right: rpx(24);
+
+  &:before {
+    content: "\e659";
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    color: #dadbe1;
+  }
+}
+
+.notice {
+  margin-right: rpx(24);
+
+  &:before {
+    content: "\e61e";
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    color: #dadbe1;
+  }
+}
+
+
+.feedbackbox {
+  background: rgba(255, 255, 255, 1);
+
+  .feedbackboxInput {
+    font-family: "Microsoft YaHei UI";
+    padding: 10px 8px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 256px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(230, 231, 236, 1);
+    border-radius: 4px;
+  }
+  .feedbackWord {
+    color: rgba(0, 0, 0, 0.25);
+    margin-top: -26px;
+    text-align: right;
+    margin-right: 12px;
+  }
+  .feedbackImgsBox {
+    padding: rpx(20) 0 rpx(15) 0;
+  }
+
+  .feedbackPhone {
+    font-size: 14px;
+    font-family: Microsoft YaHei UI;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.65);
+    input {
+      border: 1px solid #e6e7ec;
+      outline: none;
+      height: 24px;
+      border-radius: 4px;
+      padding-left: 5px;
+    }
+  }
+  .feedbackFoot {
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: Microsoft YaHei UI;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}

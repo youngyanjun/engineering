@@ -1,0 +1,14 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [
+    {
+      "userId": "f197eca7938e970c0afada924544bc91",
+      "userName": "王五",
+      "phone": "13179817756",
+      "roles": "市场部,333",
+      "email": "youngyun@fixmail.com"
+    }
+  ]
+}

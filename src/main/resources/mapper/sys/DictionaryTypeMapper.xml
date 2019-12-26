@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.DictionaryTypeMapper">
+
+    <select id="selectSortIdMax" resultType="int">
+     select Max(sort_id) as id from sys_dictionary_type
+    </select>
+    <update id="updateSortID">
+        UPDATE sys_dictionary_type SET sort_id = #{sortId } + 1 WHERE id != #{id} and sort_id = #{sortId}
+    </update>
+    <select id="selectDictionaryTypeList" resultType="com.bimforest.ems.modules.sys.vo.DictionaryTypeVO">
+    SELECT id , dictionary_type  FROM sys_dictionary_type WHERE sys_dictionary_id = #{id} ORDER BY  sort_id
+    </select>
+
+</mapper>

@@ -1,0 +1,64 @@
+// table
+$table-namespace: 'ls-table';
+
+.#{$table-namespace} {
+  border-radius: 4px 4px 0 0;
+
+  &-hd {
+    background-color: rgba(68, 82, 121, .04);
+    color: rgba(68, 82, 121, .64);
+  }
+
+  &-bd {
+    color: rgba(68, 82, 121, 1);
+  }
+
+  &-tr {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &-th,
+  &-td {
+    box-sizing: border-box;
+    padding-left: 40px;
+    line-height: 40px;
+    flex: 1;
+    text-align: left;
+
+    &.is-center {
+      text-align: center;
+    }
+  }
+
+  &-bd &-tr {
+
+    &:nth-child(2n + 1) {
+      background-color: #fff;
+    }
+
+    &:nth-child(2n) {
+      background-color: rgba(68, 82, 121, .04);
+    }
+    
+    &:hover {
+      background-color: #E3F1FF;
+    }
+  }
+
+  &-select {
+    max-width: 60px;
+  }
+
+  &-checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &-empty {
+    text-align: center;
+  }
+}

@@ -1,0 +1,131 @@
+@import '@/styles/variable.scss';
+
+$contentHeight: rpx(140);
+.content {
+  display: flex;
+  min-height: calc(100% - #{$contentHeight});
+
+  :global(.ls-tree-item.is-level-0>.ls-tree-label) {
+    // background-color: rgba(68, 82, 121, .06);
+  }
+}
+
+.aside {
+  box-sizing: border-box;
+  width: rpx(480);
+  padding: rpx(16) rpx(40) rpx(0) rpx(16);
+
+  :global(.ls-tree-prefix) {
+    margin-left: rpx(24);
+  }
+
+  .tree-title {
+    cursor: pointer;
+  }
+}
+
+.main {
+  width: 100%;
+  padding: rpx(22) rpx(32);
+
+  &-hd {
+    margin-bottom: rpx(16);
+    overflow: hidden;
+  }
+
+  &-bd {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: rpx(24) rpx(40);
+    background-color: #FBFBFC;
+  }
+}
+
+.list {
+  padding-right: rpx(80);
+  flex: 1;
+  text-align: left;
+  
+  &-hd {
+    display: flex;
+    margin-bottom: rpx(12);
+    align-items: center;
+  }
+
+  &-bd {
+    
+    :global(.ls-tree-prefix) {
+      margin-left: rpx(8);
+    }
+
+    :global(.ls-tree-item.is-active>.ls-tree-label),
+    :global(.ls-tree-subitem.is-active>.ls-tree-label),
+    :global(.ls-tree-label):hover {
+      background-color: #F1F8FF!important;
+      color: rgba(68, 82, 121, .64)!important;
+    }
+
+    :global(.ls-tree-item>.ls-tree-label>.ls-tree-prefix) {
+      width: rpx(10);
+      height: auto;
+      transform: rotateZ(180deg);
+
+      
+      &:before {
+        content: '\e644';
+        font-family: "iconfont" !important;
+        font-size: rpx(6);
+        font-style: normal;
+        color: #DADBE1;
+      }
+    }
+    
+    :global(.ls-tree.is-expanded .ls-tree-item>.ls-tree-label>.ls-tree-prefix) {
+      transform: rotateZ(0deg);
+    }
+  }
+  
+  &-title {
+    flex: 1;
+    font-size: rpx(16);
+    font-weight: bold;
+    color: #445279;
+  }
+  
+  :global(.ls-divider) {
+    margin: 0 rpx(8);
+    background-color: #E1E3E9;
+  }
+}
+
+.btns {
+  float: right;
+}
+
+.abstract {
+  flex: 1;
+  text-align: left;
+  font-size: rpx(16);
+  
+  &-hd {
+    margin-bottom: rpx(24);
+    font-weight: bold;
+    color: #445279;
+  }
+
+  &-bd {
+    box-sizing: border-box;
+    width: 100%;
+    padding: rpx(16);
+    background-color: #F5F6F8;
+  }
+
+  &-group {
+    margin-bottom: rpx(24);
+  }
+
+  &-label {
+    color: rgba(68, 82, 121, .48);
+  }
+}

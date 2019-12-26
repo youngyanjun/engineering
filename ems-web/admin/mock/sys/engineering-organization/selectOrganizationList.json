@@ -1,0 +1,70 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [
+    {
+      "name": "xianguminghcneg",
+      "type": null,
+      "manager": "tom",
+      "phone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "groupSum": 1,
+      "remark": null
+    },
+    {
+      "name": "xianguminghcneg",
+      "type": null,
+      "manager": "tom",
+      "phone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "groupSum": 2,
+      "remark": null
+    },
+    {
+      "name": "xianguminghcneg",
+      "type": null,
+      "manager": "tom",
+      "phone": "13190909909",
+      "createDate": "2019-11-14 00:00:00",
+      "groupSum": null,
+      "remark": null
+    },
+    {
+      "name": "string",
+      "type": null,
+      "manager": null,
+      "phone": null,
+      "createDate": "2019-11-14 00:00:00",
+      "groupSum": null,
+      "remark": null
+    },
+    {
+      "name": "string",
+      "type": null,
+      "manager": null,
+      "phone": null,
+      "createDate": "2019-11-14 00:00:00",
+      "groupSum": null,
+      "remark": null
+    },
+    {
+      "name": "string",
+      "type": null,
+      "manager": null,
+      "phone": null,
+      "createDate": "2019-11-14 00:00:00",
+      "groupSum": null,
+      "remark": null
+    },
+    {
+      "name": "string",
+      "type": null,
+      "manager": null,
+      "phone": null,
+      "createDate": "2019-11-14 16:17:59",
+      "groupSum": null,
+      "remark": null
+    }
+  ]
+}

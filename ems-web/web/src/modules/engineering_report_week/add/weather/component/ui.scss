@@ -1,0 +1,13 @@
+@import '@/styles/variable.scss';
+
+.content {}
+
+.help-section {
+  box-sizing: border-box;
+  padding: rpx(135) rpx(40) 0;
+}
+
+.danger {
+  font-size: rpx(12);
+  color: #FF5D5D;
+}

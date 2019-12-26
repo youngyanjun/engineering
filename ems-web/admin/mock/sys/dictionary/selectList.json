@@ -1,0 +1,19 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [
+    {
+      "id": "1",
+      "name": "合同类别",
+      "fieldsSum": 7,
+      "dictionaryChild": "[\"Google\",\"Runoob\",\"Taobao\"]"
+    },
+    {
+      "id": "2",
+      "name": "质安巡检问题种类",
+      "fieldsSum": 3,
+      "dictionaryChild": "[\"Google\",\"Runoob\",\"Taobao\"]"
+    }
+  ]
+}

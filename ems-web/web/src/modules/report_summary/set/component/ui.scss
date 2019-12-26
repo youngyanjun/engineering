@@ -1,0 +1,211 @@
+@import '@/styles/variable.scss';
+
+$borderColor: #D4D7E1;
+
+.content {
+  padding: rpx(24) rpx(48);
+  font-size: rpx(16);
+  color: rgba(68, 82, 121, .64);
+  line-height: rpx(28);
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: rpx(16);
+  font-size: rpx(18);
+  font-weight: bold;
+  color: $primary;
+}
+
+.set {
+  display: flex;
+  margin-top: rpx(24);
+  width: rpx(1000);
+  border: rpx(1) solid $borderColor;
+  border-radius: rpx(4);
+}
+
+.project {
+  width: rpx(380);
+  border-right: rpx(1) solid $borderColor;
+
+  &-hd {
+    display: flex;
+    width: 100%;
+    height: rpx(48);
+    font-size: rpx(16);
+    font-weight: bold;
+    color: rgba(68, 82, 121, .8);
+    background-color: rgba(68, 82, 121, .04);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-bd {
+    min-height: rpx(482);
+  }
+
+  &-title {
+    margin-left: rpx(16);
+  }
+
+  :global(.ls-input) {
+    margin-right: rpx(9);
+    width: rpx(200);
+    height: rpx(32);
+
+    &-suffix::before {
+      content: '\e621';
+      font-family: iconfont;
+      font-size: rpx(16);
+      color: $default;
+      line-height: rpx(20);
+    }
+  }
+
+  :global(.ls-radio) {
+    position: relative;
+    display: block;
+    padding-left: rpx(15);
+    line-height: rpx(36);
+    cursor: pointer;
+
+    &-prefix {
+      display: none;
+    }
+
+    &:global(.is-checked) {
+      background-color: $default;
+      color: #fff;
+
+      &::after {
+        content: '\e645';
+        position: absolute;
+        top: 0;
+        right: rpx(-7);
+        font-family: iconfont;
+        font-size: rpx(8);
+        color: $default;
+      }
+    }
+  }
+}
+
+.singlebody {
+  width: rpx(619);
+
+  &-hd {
+    @extend .project-hd;
+  }
+
+  &-bd {
+    padding: rpx(16) rpx(40);
+  }
+
+  &-title {
+    margin-left: rpx(40);
+  }
+
+  &-photograph {
+    margin-right: rpx(40);
+  }
+
+  :global(.ls-switch) {
+    &::before {
+      content: '否';
+      display: block;
+      width: rpx(24);
+      float: right;
+      font-size: rpx(14);
+      color: #fff;
+      line-height: rpx(20);
+      text-align: center;
+    }
+
+    &:global(.is-checked::before) {
+      content: '是';
+      float: left;
+    }
+  }
+}
+
+.drag-stage {
+  position: relative;
+}
+
+.drag-item {
+  position: relative;
+  display: flex;
+  margin-bottom: rpx(16);
+  align-items: center;
+  justify-content: flex-start;
+
+  :global(.ls-input) {
+    width: rpx(412);
+  }
+}
+
+.drag-prex {
+  cursor: pointer;
+  
+  &:before {
+    content: '\e646';
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #D4D7E1;
+  }
+}
+
+.drag-suffix {
+  margin-left: rpx(8);
+  margin-right: rpx(32);
+  cursor: pointer;
+
+  &:before {
+    content: '\e622';
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-size: rpx(10);
+    color: #D4D7E1;
+  }
+}
+
+.drag-add {
+  display: block;
+  margin-left: rpx(16);
+  width: rpx(412);
+  border: rpx(1) dashed  #D4D7E1;
+  font-size: rpx(14);
+  color: rgba(68, 82, 121, .24);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

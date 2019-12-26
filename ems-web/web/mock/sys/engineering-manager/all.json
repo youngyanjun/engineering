@@ -1,0 +1,49 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [
+    {
+      "id": "92ae4ed095600a73292164f424671235",
+      "createDate": "2019-12-18 15:26:29",
+      "updateDate": null,
+      "createBy": null,
+      "updateBy": null,
+      "status": 1,
+      "engineeringName": "冷链",
+      "engineeringCode": "lenglian",
+      "engineeringAbbreviation": "冷链",
+      "managerId": "187aeab170460aa518932b5d8ccff5bc",
+      "contractPrice": "10",
+      "orgId": "61b04b59bc90f0e8e44f2c28de95b426"
+    },
+    {
+      "id": "92ae4ed095600a73292164f424671234",
+      "createDate": "2019-12-18 15:26:29",
+      "updateDate": null,
+      "createBy": null,
+      "updateBy": null,
+      "status": 1,
+      "engineeringName": "华山搬迁",
+      "engineeringCode": "华山搬迁",
+      "engineeringAbbreviation": "华山搬迁",
+      "managerId": "187aeab170460aa518932b5d8ccff5bc",
+      "contractPrice": "10",
+      "orgId": "2189d8ec96eb76bcf3db62ea7f458e5e"
+    },
+    {
+      "id": "cb2e5557f4462410bee3f024ab95b0eb",
+      "createDate": "2019-12-20 15:27:28",
+      "updateDate": null,
+      "createBy": null,
+      "updateBy": null,
+      "status": 1,
+      "engineeringName": "AAA",
+      "engineeringCode": "A",
+      "engineeringAbbreviation": null,
+      "managerId": "187aeab170460aa518932b5d8ccff5bc",
+      "contractPrice": "1",
+      "orgId": "77768ebd3eb92116752db0f75f13e327"
+    }
+  ]
+}

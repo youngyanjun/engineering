@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.SysRoleMapper">
+
+    <select id="selectToList" resultType="com.bimforest.ems.modules.sys.vo.RoleListVO">
+        select id,parent_id, role_name , remark from sys_role where org_id is null  ORDER BY  create_date
+    </select>
+    <select id="getUserRoles" resultType="com.bimforest.ems.modules.sys.entity.SysRole">
+          SELECT
+          r.*
+        FROM
+          sys_user AS u,
+          sys_role AS r,
+          sys_user_role ur
+        WHERE u.id = ur.user_id
+          AND r.id = ur.role_id
+          AND u.id = #{userId};
+    </select>
+
+    <select id="selectRoles" resultType="com.bimforest.ems.modules.sys.vo.RoleListVO">
+          select
+                id,
+                parent_id,
+                role_name ,
+                remark
+            from
+                sys_role r
+            where
+                r.status=1
+            <if test=" structureAddVO.orgId != null">
+                and r.org_id = #{structureAddVO.orgId}
+            </if>
+            <if test="structureAddVO.orgId == null" >
+                and r.org_id is null
+            </if>
+
+
+
+    </select>
+
+    <select id="deleteRole" resultType="integer">
+        update
+            sys_role
+        set
+            status =-1
+        where
+            id in (with recursive T (id,
+            parent_id,
+            role_name,
+            depth) as (
+            select
+                r.id,
+                r.parent_id,
+                r.role_name,
+                1 depth
+            from
+                sys_role r
+            where
+                r.id = #{roleId}
+        union all
+            select
+                sr.id,
+                sr.parent_id,
+                sr.role_name,
+                T.depth + 1 depth
+            from
+                sys_role sr
+            join T on
+                sr.parent_id = T.id )
+            select
+                id
+            from
+                T )
+
+    </select>
+
+    <select id="selectUsersForRole" resultType="com.bimforest.ems.modules.sys.vo.RoleUserSelectVO">
+        select
+            su.id as userId,
+            su.user_name,
+            su.phone,
+            su.e_mail,
+            (
+                select string_agg (sr.role_name,
+                ',')
+            from
+                sys_role sr
+            left join sys_user_role surr on
+                sr.id = surr.role_id
+            where
+                sr.org_id = #{orgId}
+                and sr.status = 1
+                and surr.status = 1
+                and surr.user_id = su.id) as roles
+        from
+            sys_user su
+        left join sys_user_role sur on
+            sur.user_id = su.id
+        where
+            su.status = 1
+            and sur.status = 1
+            and sur.role_id=#{roleId}
+    </select>
+
+    <select id="selectUserRolesByOrgId" resultType="com.bimforest.ems.modules.sys.entity.SysRole">
+        select
+            sr.id,
+            sr.role_name
+        from
+            sys_role sr
+        left join sys_user_role sur on
+            sr.id = sur.role_id
+        where
+            sr.status = 1
+            and sur.status = 1
+            and sur.user_id = #{userId}
+            and sr.org_id = #{orgId}
+    </select>
+
+    <select id="selectUsersNotInRole" resultType="com.bimforest.ems.modules.sys.entity.SysUser">
+        select
+            su.id,
+            su.user_name,
+            su.phone
+        from
+            base_structure_user bsu
+        left join sys_user su on
+            su.id = bsu.user_id
+        left join base_structure bs on
+            bs.id = bsu.structure_id
+        where
+            bsu.status = 1
+            and su.status = 1
+            and bs.status = 1
+            and bs.org_id =  (
+                select r.org_id
+            from
+                sys_role r
+            where
+                r.id = #{roleId})
+            and su.id not in(
+                select sur.user_id
+            from
+                sys_user_role sur
+            where
+                sur.role_id = #{roleId}
+                and sur.status = 1)
+            <if test=" userName != null and userName != ''">
+                and su.user_name like  CONCAT('%',#{userName },'%' )
+            </if>
+    </select>
+
+</mapper>

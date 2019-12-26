@@ -1,0 +1,140 @@
+@import '@/styles/variable.scss';
+
+
+.content {
+
+  :global(.ls-input.is-textarea .ls-input-inner) {
+    min-height: rpx(120);
+  }
+
+  :global(.ls-select-input) {
+    height: rpx(40);
+    border: none;
+    color: rgba(68, 82, 121, 0.64);
+    background-color: transparent;
+    text-align: center;
+  }
+}
+
+.main {
+  padding: rpx(22);
+  color: #445279;
+}
+
+.aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-width: rpx(400);
+  background-color: rgba(255, 255, 255, .6);
+}
+
+.hd {
+  font-size: rpx(18);
+  font-weight: bold;
+  text-align: center;
+}
+
+.bd {
+  &>:global(.ls-divider) {
+    margin-top: rpx(12);
+    margin-bottom: rpx(30);
+    background-color: #E1E3E9;
+
+    &:global(.is-dashed) {
+      border-color: #E1E3E9;
+    }
+  }
+}
+
+.title {
+  position: relative;
+  font-size: rpx(16);
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: rpx(-8);
+    display: block;
+    width: rpx(4);
+    height: rpx(20);
+    background-color: #55A8FD;
+  }
+}
+
+.form {
+  margin: 0 auto;
+  width: rpx(570);
+
+  &>:global(.ls-divider) {
+    margin-top: rpx(12);
+    margin-bottom: rpx(30);
+    background-color: #E1E3E9;
+
+    &:global(.is-dashed) {
+      border-color: #E1E3E9;
+    }
+  }
+}
+
+.submit {
+  margin: 0 auto;
+}
+
+.group {
+  margin: 0 auto rpx(24);
+  text-align: left;
+
+  &:global(.is-center) {
+    text-align: center;
+  }
+
+  &:global(.is-require:after) {
+    content: '*';
+    margin-left: rpx(8);
+    font-size: rpx(16);
+    color: #FF3729;
+  }
+
+  &-label {
+    display: inline-block;
+    min-width: rpx(100);
+    font-size: rpx(14);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  &-value {
+    display: inline-block;
+    width: rpx(440);
+    vertical-align: middle;
+
+    &:global(.is-small) {
+      width: rpx(176);
+    }
+
+    :global(.ls-input-inner) {
+      height: rpx(32);
+    }
+    
+    :global(.ls-input-append) {
+      min-width: rpx(64);
+      line-height: rpx(30);
+      background-color: #D4D7E1;
+      text-align: center;
+    }
+  }
+}
+
+// 表格
+.field {
+  margin-bottom: rpx(24);
+
+  &-hd {
+    margin-bottom: rpx(8);
+    font-size: rpx(14);
+    font-weight: bold;
+    color: #445279;
+  }
+}

@@ -1,0 +1,359 @@
+@import "@/styles/variable.scss";
+
+.content {
+  display: flex;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.aside {
+  min-height: 100%;
+  background-color: #273867;
+  color: #fff;
+}
+
+.menu {
+  width: rpx(200);
+
+  &:global(.is-shrink) {
+    width: rpx(64);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  &:global(.is-shrink) &-hd {
+    padding-left: rpx(26);
+  }
+
+  &:global(.is-shrink) &-expand {
+    float: none;
+  }
+
+  &:global(.is-shrink) &-title,
+  &:global(.is-shrink) &-name {
+    display: none;
+  }
+
+  &-hd {
+    height: rpx(48);
+    line-height: rpx(48);
+    font-size: rpx(16);
+  }
+
+  &-bd {
+  }
+
+  &-label {
+    box-sizing: border-box;
+    padding-left: rpx(26);
+    color: rgba(255, 255, 255, 0.72);
+    line-height: rpx(40);
+    font-size: rpx(14);
+    cursor: pointer;
+  }
+
+  &-item {
+    position: relative;
+  }
+
+  &-item > &-label {
+    background-color: rgba(61, 80, 132, 0.24);
+  }
+
+  &-subitem > &-label {
+    background-color: rgba(61, 80, 132, 0.24);
+  }
+
+  &-item:global(.is-active) {
+    background-color: #3d5084;
+  }
+
+  &-item:global(.is-active) &-label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: rpx(4);
+    height: rpx(40);
+    background-color: #55a8fd;
+  }
+
+  &-shrink {
+    float: right;
+    margin-right: rpx(12);
+    vertical-align: middle;
+    cursor: pointer;
+
+    &::before {
+      font-family: "iconfont" !important;
+      font-size: rpx(14);
+      font-style: normal;
+      content: "\e65f";
+      color: #fff;
+    }
+  }
+
+  &-expand {
+    float: right;
+    margin-right: rpx(12);
+    vertical-align: middle;
+    cursor: pointer;
+
+    &::before {
+      font-family: "iconfont" !important;
+      font-size: rpx(14);
+      font-style: normal;
+      content: "\e65e";
+      color: #fff;
+    }
+  }
+
+  &-icon {
+    margin-right: rpx(8);
+    vertical-align: middle;
+    cursor: pointer;
+
+    &::before {
+      font-family: "iconfont" !important;
+      font-size: rpx(14);
+      font-style: normal;
+      content: "\e65f";
+      color: #fff;
+    }
+  }
+}
+
+.logo {
+  margin: rpx(12);
+  vertical-align: middle;
+}
+
+.main {
+  flex: 1;
+
+  &-hd {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: rpx(24);
+    line-height: rpx(48);
+    box-shadow: 0 rpx(2) rpx(6) rgba(0, 21, 41, 0.08);
+  }
+
+  &-bd {
+  }
+}
+
+.crumbs {
+  font-size: rpx(16);
+  color: rgba(68, 82, 121, .48);
+
+  &>em {
+    font-style: normal;
+    color: $primary;
+  }
+}
+
+.other {
+  float: right;
+  margin-right: rpx(48);
+}
+
+.help {
+  margin-right: rpx(24);
+  font-size: 20px;
+  vertical-align: middle;
+
+  &:before {
+    content: "\e620";
+    font-family: "iconfont" !important;
+    font-style: normal;
+    color: #dadbe1;
+  }
+}
+
+.feedback {
+  font-size: 20px;
+  margin-right: rpx(24);
+  vertical-align: middle;
+
+  &:before {
+    content: "\e659";
+    font-family: "iconfont" !important;
+    font-style: normal;
+    color: #dadbe1;
+  }
+}
+
+.messageNum {
+  font-size: 12px;
+  position: absolute;
+  left: 13px;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-family: Arial;
+  line-height: 1;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 0, 52, 1);
+}
+
+.notice {
+  margin-right: rpx(24);
+  font-size: 20px;
+  vertical-align: middle;
+
+  &:before {
+    content: "\e61e";
+    font-family: "iconfont" !important;
+    font-style: normal;
+    color: rgba(85,168,253,1);
+  }
+}
+
+.userIcon {
+  font-size: 24px;
+
+  &:before {
+    content: "\e615";
+    font-family: "iconfont" !important;
+    vertical-align: middle;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+.exitIcon {
+  font-size: 24px;
+  &:before {
+    content: "\e618";
+    font-family: "iconfont" !important;
+    vertical-align: middle;
+    font-style: normal;
+    color: #ff0034;
+  }
+}
+
+.portrait {
+  width: rpx(34);
+  height: rpx(34);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: rpx(-6);
+}
+
+.user-pop {
+  position: absolute;
+  top: 100%;
+  line-height: initial;
+  right: rpx(16);
+  width: rpx(254);
+  padding: rpx(24);
+  background-color: #fff;
+  border-radius: rpx(8);
+  z-index: 9;
+  border: 1px solid #e6e7ec;
+  box-shadow: 0 2px 6px rgba(0, 21, 41, 0.08);
+  border-radius: 4px;
+  .user_top {
+    overflow: hidden;
+  }
+  .userPic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(47, 84, 235, 0.16);
+    float: left;
+    background: rgb(106, 175, 255);
+    text-align: center;
+    line-height: 61px;
+  }
+  .userInfo {
+    float: left;
+    text-align: left;
+    margin: 8px 0 0 16px;
+  }
+  .user_name {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .user_role {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.25);
+    line-height: 17px;
+  }
+  // .user_role {
+  //   margin: rpx(24) 0;
+  //   font-size: 14px;
+  //   color: rgba(0, 0, 0, 0.45);
+  // }
+  .carve_line {
+    height: 1px;
+    width: 100%;
+    background: #e6e6e6;
+    margin: 24px auto;
+  }
+  .personal_data {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    > span {
+      font-size: 16px;
+      line-height: 21px;
+      vertical-align: middle;
+      margin-left: 16px;
+    }
+  }
+}
+.feedbackbox {
+  background: rgba(255, 255, 255, 1);
+
+  .feedbackboxInput {
+    font-family: "Microsoft YaHei UI";
+    padding: 10px 8px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 256px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(230, 231, 236, 1);
+    border-radius: 4px;
+  }
+  .feedbackWord {
+    color: rgba(0, 0, 0, 0.25);
+    margin-top: -26px;
+    text-align: right;
+    margin-right: 12px;
+  }
+  .feedbackImgsBox {
+    padding: rpx(20) 0 rpx(15) 0;
+  }
+
+  .feedbackPhone {
+    font-size: 14px;
+    font-family: Microsoft YaHei UI;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.65);
+    input {
+      border: 1px solid #e6e7ec;
+      outline: none;
+      height: 24px;
+      border-radius: 4px;
+      padding-left: 5px;
+    }
+  }
+  .feedbackFoot {
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: Microsoft YaHei UI;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,21 @@
+@import './common/variable.scss';
+
+.#{$divider-namespace} {
+  margin: $divider-margin 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  
+  &.is-vertical {
+    display: inline-block;
+    margin: 0 $divider-margin;
+    width: 1px;
+    height: 1em;
+    vertical-align: middle;
+  }
+
+  &.is-dashed {
+    height: 0;
+    border-bottom: dashed #000 1px;
+  }
+}

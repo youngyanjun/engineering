@@ -1,0 +1,124 @@
+@import '@/styles/variable.scss';
+
+.content {
+}
+
+.hd {
+  height: rpx(64); 
+  box-sizing: 0 rpx(1) rpx(2) rgba(115, 123, 138, .16);
+
+  &-content {
+    margin: 0 auto;
+    width: rpx(1200);
+  }
+}
+
+$h: rpx(128);
+
+.bd {
+  position: relative;
+  min-height: rpx(520);
+  height: calc(100% - #{$h});
+  background: url(~@/assets/images/bg_style2.png) #F1F4F6 no-repeat center bottom / auto 100%;
+}
+
+.ft {
+  height: rpx(64); 
+  text-align: center;
+  background-color: #F1F4F6;
+}
+
+.title {
+  font-size: rpx(24);
+  color: #445279;
+}
+
+.subtitle {
+  margin-bottom: rpx(56);
+  font-size: rpx(14);
+  color: rgba(68, 82, 121, .64);
+}
+
+.logo {
+  margin-top: rpx(12);
+  height: rpx(40);
+}
+
+.remember {
+  display: block;
+  font-size: rpx(14);
+  color: rgba(68, 82, 121, .4);
+  text-align: center;
+}
+
+.friendlink {
+  // display: flex;
+  display: none;
+  margin: 0 auto;
+  max-width: rpx(640);
+  font-size: rpx(14);
+  color: rgba(0, 0, 0, .5);
+  justify-content: space-between;
+}
+
+.copyright {
+  font-size: rpx(14);
+  color: rgba(0, 0, 0, .24);
+  line-height: rpx(64);
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto 0;
+  margin-left: rpx(-400);
+  margin-top: rpx(-240);
+  width: rpx(800);
+  height: rpx(480);
+  border-radius: rpx(12);
+  overflow: hidden;
+
+  &-aside {
+    float: left;
+    width: rpx(500);
+    height: 100%;
+    background: url(~@/assets/images/loginkv_cons.png) no-repeat center / 100% auto;
+  }
+  
+  &-main {
+    float: left;
+    box-sizing: border-box;
+    width: rpx(300);
+    height: 100%;
+    padding: rpx(50) rpx(24);
+    background-color: #fff;
+  }
+
+  &-group {
+    margin-bottom: rpx(24);
+  }
+
+  &-label {
+    font-size: rpx(14);
+    color: rgba(68, 82, 121, .64);
+  }
+
+  &-value {
+
+    :global(.ls-input-inner) {
+      border: none;
+      border-bottom: rpx(1) solid rgba(219, 222, 236, 1);
+      height: rpx(36);
+    }
+  }
+
+  .submit:global(.ls-button) {
+    width: 100%;
+    height: rpx(48);
+    border-radius: rpx(4);
+    border-color: transparent;
+    background:linear-gradient(135deg,rgba(66,158,253,1) 0%,rgba(153,221,255,1) 100%);
+    font-size: rpx(16);
+  }
+}

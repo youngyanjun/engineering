@@ -1,0 +1,20 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": null,
+    "coordination": "[{\"content\":\"1\",\"status\":\"2\",\"result\":\"3\",\"manhour\":\"2019-11-26\"}]",
+    "drawings": "[]",
+    "contract": "[]",
+    "civilengineeringSub": "[]",
+    "prefabricatedSub": "[]",
+    "waterpowerSub": "[]",
+    "havcSub": "[]",
+    "decorationSub": "[]",
+    "otherSub": "[]",
+    "personnel": null,
+    "machine": null,
+    "stageInfoRemark": "112"
+  }
+}

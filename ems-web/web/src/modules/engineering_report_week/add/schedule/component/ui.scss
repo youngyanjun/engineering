@@ -1,0 +1,123 @@
+@import '@/styles/variable.scss';
+
+.content {}
+
+.title {
+  :global(.ls-button) {
+    float: right;
+    margin-left: rpx(8);
+  }
+}
+
+.upload {
+  display: block;
+  width: rpx(340);
+  height: rpx(255);
+
+  :global(.ls-upload-icon) {
+    text-align: center;
+
+    &::after {
+      content: '选择图片';
+      display: block;
+      font-size: rpx(24);
+      color: rgba(68, 82, 121, .48);
+    }
+  }
+}
+
+.thumb {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &:after {
+    content: '';
+    display: block;
+    width: rpx(340);
+  }
+
+  &:global(.is-batched .ls-checkbox) {
+    cursor: pointer;
+
+    :global(.ls-checkbox-prefix) {
+      display: block;
+    }
+  }
+
+  &:global(.is-batched) &-item:hover .thumb-delete {
+    display: none!important;
+  }
+  
+  &-item {
+    position: relative;
+    display: block;
+    margin-bottom: rpx(24);
+    width: rpx(340);
+    height: rpx(255);
+
+    &:hover .thumb-delete {
+      display: block;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-checkbox {
+    display: block;
+    
+    :global(.ls-checkbox-prefix) {
+      display: none;
+      position: absolute!important;
+      top: rpx(8);
+      left: rpx(8);
+      width: rpx(20);
+      height: rpx(20);
+      z-index: 1;
+      cursor: pointer;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, .56);
+    }
+  }
+
+  &-description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: rpx(40);
+    z-index: 1;
+    
+    :global(.ls-input-inner) {
+      border: none;
+      background-color: rgba(0, 0, 0, .8);
+      color: #fff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, .48);
+      }
+    }
+  }
+
+  &-delete {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .8) 100%);
+  
+    &-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: rpx(24);
+    }
+  }
+}

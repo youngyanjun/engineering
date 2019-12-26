@@ -1,0 +1,42 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [{
+    "id": "2e552b4b-1f0d-4239-be27-5bf1ba43b6ed",
+    "createDate": "2019-12-06 15:25:56",
+    "updateDate": "2019-12-06 15:25:56",
+    "createBy": "f197eca7938e970c0afada924544bc91",
+    "updateBy": null,
+    "status": 1,
+    "bizId": "0b51895e65e7593f22b4591fca4f5018",
+    "bizType": "IMAGE_PROGRESS",
+    "fileName": "/pi/2019-12-06/2ed0ed6c-6d2e-44b5-bf8d-7903bd218c3f.png",
+    "realName": null,
+    "remark": ""
+  }, {
+    "id": "df16ba54-2e3e-4f73-8e39-b27a57f8f031",
+    "createDate": "2019-12-06 15:25:56",
+    "updateDate": "2019-12-06 15:25:56",
+    "createBy": "f197eca7938e970c0afada924544bc91",
+    "updateBy": null,
+    "status": 1,
+    "bizId": "0b51895e65e7593f22b4591fca4f5018",
+    "bizType": "IMAGE_PROGRESS",
+    "fileName": "/pi/2019-12-06/4ba34832-e5f5-42f7-8a06-ba610b729650.png",
+    "realName": null,
+    "remark": ""
+  }, {
+    "id": "ae5b7fb3-fd18-44d6-930d-0014d1e37c82",
+    "createDate": "2019-12-06 15:25:56",
+    "updateDate": "2019-12-06 15:25:56",
+    "createBy": "f197eca7938e970c0afada924544bc91",
+    "updateBy": null,
+    "status": 1,
+    "bizId": "0b51895e65e7593f22b4591fca4f5018",
+    "bizType": "IMAGE_PROGRESS",
+    "fileName": "/pi/2019-12-06/845c5c14-1fce-46ee-8ec6-813ae5b80053.png",
+    "realName": null,
+    "remark": ""
+  }]
+}

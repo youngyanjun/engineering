@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.construction.mapper.WengineeringReportMachineMapper">
+
+    <delete id="deleteByWeeklyId">
+        delete from reportw_engineering_machine where report_id = #{id} and  weekly_type = '0'
+
+    </delete>
+    <delete id="deleteByNextWeeklyId">
+         delete from reportw_engineering_machine where report_id = #{id} and  weekly_type = '1'
+
+    </delete>
+    <select id="getMachineList" resultType="com.bimforest.ems.modules.construction.entity.WengineeringReportMachine">
+        select
+        id,
+        auto_pumps,
+        electric_welding_machine,
+        concrete_transport,
+        forklift,
+        cutter,
+        material_transport,
+        crane_truck,
+        other,
+        date_at as dateAt
+        from reportw_engineering_machine
+        where report_id = #{id}
+        and
+        weekly_type = #{type}
+
+    </select>
+
+</mapper>

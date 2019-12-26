@@ -1,0 +1,138 @@
+// select
+$select-namespace: 'ls-select';
+
+.#{$select-namespace} {
+  position: relative;
+  display: inline-block;
+  line-height: 40px;
+  cursor: pointer;
+
+  &.is-disabled &-input {
+    background-color: #F7F8FA;
+  }
+
+  &-dropdown {
+    position: absolute;
+    top: 38px;
+    width: 100%;
+    max-height: 118px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(93, 121, 201, .12);
+    overflow-y: auto;
+    z-index: 9;
+  }
+
+  &-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 2px;
+    cursor: pointer;
+    pointer-events: none;
+
+    &:focus {
+      border-color: #00A9E0;
+    }
+
+    &::placeholder {
+      color: rgba(9, 47, 98, .3);
+    }
+  }
+
+  &-suffix {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  &.is-folded &-suffix {
+    &:before {
+      content: '﹀';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: no-repeat center / 100% auto;
+      color: #fff;
+      line-height: 15px;
+    }
+  }
+  
+  &.is-unfolded &-suffix {
+    &:before {
+      content: '︿';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: no-repeat center / 100% auto;
+      color: #fff;
+      line-height: 15px;
+    }
+  }
+
+  .ls-icon-up {
+    cursor: pointer;
+
+    & {
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      transform: rotate(0deg);
+    }
+  
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-left: 4px transparent dashed;
+      border-left: 4px transparent dashed;
+      border-right: 4px transparent dashed;
+      border-bottom: 4px #fff solid;
+    }
+  
+    &:before {
+      border-bottom: 4px rgba(40, 47, 64, .6) solid;
+    }
+  
+    &:after {
+      top: 1px;
+      /*覆盖并错开1px*/
+      border-bottom: 4px #fff solid;
+    }
+  }
+  
+  .ls-icon-down {
+    cursor: pointer;
+    
+    & {
+      position: absolute;
+      top: 14px;
+      left: 13px;
+      transform: rotate(180deg);
+    }
+  
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-left: 4px transparent dashed;
+      border-left: 4px transparent dashed;
+      border-right: 4px transparent dashed;
+      border-bottom: 4px #fff solid;
+    }
+  
+    &:before {
+      border-bottom: 4px rgba(40, 47, 64, .6) solid;
+    }
+  
+    &:after {
+      top: 1px;
+      /*覆盖并错开1px*/
+      border-bottom: 4px #fff solid;
+    }
+  }
+}

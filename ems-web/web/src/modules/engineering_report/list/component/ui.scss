@@ -1,0 +1,7 @@
+.content {}
+
+.state {
+  &:global(.is-gray) {
+    color: rgba(68, 82, 121, .64);
+  }
+}

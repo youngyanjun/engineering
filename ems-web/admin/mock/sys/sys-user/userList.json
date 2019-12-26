@@ -1,0 +1,71 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "records": [
+      {
+        "id": 1,
+        "userName": "张三",
+        "phone": "15655557555",
+        "fieldsSum": "0",
+        "status": "1",
+        "email": "yyy@1qq.omk"
+      },
+      {
+        "id": 2,
+        "userName": "tom",
+        "phone": "13190909909",
+        "fieldsSum": "13",
+        "status": "1",
+        "email": "tom@qq.com"
+      },
+      {
+        "id": 3,
+        "userName": "cheng1",
+        "phone": "190838383383",
+        "fieldsSum": "2",
+        "status": "1",
+        "email": "uuyejt@qq.com"
+      },
+      {
+        "id": 4,
+        "userName": "cheng1",
+        "phone": "190838383303",
+        "fieldsSum": "0",
+        "status": "3",
+        "email": "uuyejt@1qq.com"
+      },
+      {
+        "id": 5,
+        "userName": "cheng1",
+        "phone": "190858383303",
+        "fieldsSum": "0",
+        "status": "1",
+        "email": "uuyejt@17qq.com"
+      },
+      {
+        "id": 6,
+        "userName": "121",
+        "phone": "17521639981",
+        "fieldsSum": "0",
+        "status": "3",
+        "email": "tt@qq.com"
+      },
+      {
+        "id": 7,
+        "userName": "esr",
+        "phone": "17521639900",
+        "fieldsSum": "0",
+        "status": "1",
+        "email": "yy@uu.com"
+      }
+    ],
+    "total": 7,
+    "size": 10,
+    "current": 1,
+    "orders": [],
+    "searchCount": true,
+    "pages": 1
+  }
+}

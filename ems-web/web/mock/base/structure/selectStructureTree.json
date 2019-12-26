@@ -1,0 +1,55 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [{
+    "id": "6a5bf394b5e1ca009a1d51b5bf805a2c",
+    "parentId": null,
+    "child": [{
+      "id": "bda2c43a57a47a8c325053d5814f20b0",
+      "parentId": "6a5bf394b5e1ca009a1d51b5bf805a2c",
+      "child": [{
+        "id": "6f21f6dfe3131f40f910aba5c11e7b43",
+        "parentId": "bda2c43a57a47a8c325053d5814f20b0",
+        "child": null,
+        "remark": "111",
+        "structureName": "drgdert",
+        "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+      }],
+      "remark": "",
+      "structureName": "8888",
+      "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+    }, {
+      "id": "53e8a8d785f877e5fb2569071edbb6cc",
+      "parentId": "6a5bf394b5e1ca009a1d51b5bf805a2c",
+      "child": [{
+        "id": "db88f492ef18d4d8268899edaca8065f",
+        "parentId": "53e8a8d785f877e5fb2569071edbb6cc",
+        "child": null,
+        "remark": "233",
+        "structureName": "555",
+        "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+      }],
+      "remark": "222",
+      "structureName": "111",
+      "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+    }, {
+      "id": "01ed9d0b2aa98d52fc1d93d3943d2902",
+      "parentId": "6a5bf394b5e1ca009a1d51b5bf805a2c",
+      "child": [{
+        "id": "86ea1cb87b56e17d28aebdf708b674ed",
+        "parentId": "01ed9d0b2aa98d52fc1d93d3943d2902",
+        "child": null,
+        "remark": "1",
+        "structureName": "444",
+        "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+      }],
+      "remark": "改了",
+      "structureName": "工程一（1）部改",
+      "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+    }],
+    "remark": "海盐",
+    "structureName": "工程一部",
+    "orgId": "e1b074c2f066c9bf2a6b110dd066e67f"
+  }]
+}

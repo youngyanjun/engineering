@@ -1,0 +1,10 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": null,
+    "receiveFileIn": "[{\"content\":\"1\"}]",
+    "receiveFileOut": "[{\"content\":\"2\"}]"
+  }
+}

@@ -1,0 +1,78 @@
+@import '@/styles/variable.scss';
+
+content {}
+
+.bd :global(.ls-dialog-content) {
+  width: rpx(880);
+  height: rpx(614);
+}
+
+.bd :global(.ls-dialog-bd) {
+  max-height: rpx(520);
+}
+
+.add {
+  display: block;
+  margin: 0 auto rpx(32);
+  width: rpx(412);
+  border: rpx(1) dashed  #D4D7E1;
+  font-size: rpx(14);
+  color: rgba(68, 82, 121, .24);
+}
+
+.range {
+  box-sizing: border-box;
+  width: rpx(404);
+  padding: rpx(16);
+  border: 1px solid  #D4D7E1;
+  border-radius: rpx(2);
+  list-style: none;
+  font-size: rpx(14);
+  color: #445279;
+
+  &-item {
+    line-height: rpx(32); 
+    
+    :global(.ls-checkbox) {
+      color: #445279;
+    }
+  }
+
+  &-radio {
+    float: right;
+    font-size: rpx(12);
+
+    :global(.ls-radio) {
+      margin-left: rpx(16);
+    }
+  }
+}
+
+.subpackage {
+  :global(.ls-select-dropdown) {
+    line-height: rpx(32);
+    max-height: rpx(96);
+    overflow-y: auto;
+  }
+}
+
+.delete {
+  display: inline-block;
+  margin: 0 rpx(8);
+  font-family: "iconfont" !important;
+  font-size: rpx(10);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #D4D7E1;
+  cursor: pointer;
+  line-height: rpx(32);
+  
+  &::before {
+    content: '\e622';
+  }
+
+  &:hover {
+    color: #FF5D5D;
+  }
+}

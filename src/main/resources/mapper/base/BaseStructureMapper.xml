@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.base.mapper.BaseStructureMapper">
+
+
+    <select id="queryStructureSelectVOs" resultType="com.bimforest.ems.modules.base.vo.StructureTreeVO">
+        select
+            id,
+            remark,
+            structure_name,
+            parent_id,
+            org_id
+        from
+            base_structure
+        where
+            status = 1
+        and
+            org_id=#{orgId}
+        order by update_date desc
+    </select>
+
+    <select id="deleteStructure" resultType="integer">
+         update
+            base_structure
+        set
+            status =-1
+        where
+            id in (with recursive T (id,
+            parent_id,
+            depth) as (
+            select
+                r.id,
+                r.parent_id,
+                1 depth
+            from
+                base_structure r
+            where
+                r.id =#{id}
+        union all
+            select
+                sr.id,
+                sr.parent_id,
+                T.depth + 1 depth
+            from
+                base_structure sr
+            join T on
+                sr.parent_id = T.id )
+            select
+                id
+            from
+                T )
+
+    </select>
+
+    <select id="selectUsersByStructureId" resultType="com.bimforest.ems.modules.base.vo.StructureUserVO">
+        select
+            su.id as userId,
+            su.user_name,
+            su.phone,
+            su.e_mail,
+            (
+            select
+                string_agg (sr.role_name,
+                ',')
+            from
+                sys_role sr
+            left join sys_user_role ur on
+                ur.role_id = sr.id
+            where
+                sr.status = 1
+                and ur.status = 1
+                and sr.org_id = bs.org_id
+                and ur.user_id = su.id) as roles
+        from
+            base_structure_user bu
+        left join sys_user su on
+            su.id = bu.user_id
+        left join base_structure bs on
+            bu.structure_id = bs.id
+        where
+            bu.structure_id = #{structureId}
+            and bu.status = 1
+        order by
+            convert_to(su.user_name, 'GBK');
+
+    </select>
+
+    <select id="selectUsersByOrgId" resultType="com.bimforest.ems.modules.base.vo.StructureUserVO">
+        select
+            userId,
+            user_name,
+            phone,
+            e_mail,
+            roles
+        from
+            (
+                select distinct su.id as userId,
+                su.user_name,
+                su.phone,
+                su.e_mail,
+                (
+                select
+                    string_agg (sr.role_name,
+                    ',')
+                from
+                    sys_role sr
+                left join sys_user_role ur on
+                    ur.role_id = sr.id
+                where
+                    sr.status = 1
+                    and ur.status = 1
+                    and sr.org_id = bs.org_id
+                    and ur.user_id = su.id) as roles
+            from
+                base_structure_user bu
+            left join sys_user su on
+                su.id = bu.user_id
+            left join base_structure bs on
+                bu.structure_id = bs.id
+            where
+                bs.org_id = #{orgId}
+                and bu.status = 1
+                and bs.status = 1)t
+        order by
+            convert_to(t.user_name, 'GBK');
+
+    </select>
+
+    <select id="selectUsersNotInStructure" resultType="com.bimforest.ems.modules.sys.entity.SysUser">
+        select
+            su.id,
+            su.user_name,
+            su.phone
+        from
+            sys_user su
+        where
+            su.id not in(
+            select
+                bsu.user_id
+            from
+                base_structure_user bsu
+            where
+                bsu.structure_id = #{structureId}
+                and bsu.status = 1)
+            and su.status = 1
+        <if test=" userName != null and userName != ''">
+            and su.user_name like  CONCAT('%',#{userName },'%' )
+        </if>
+    </select>
+
+
+</mapper>

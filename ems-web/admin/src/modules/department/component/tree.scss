@@ -1,0 +1,101 @@
+@import '@/styles/variable.scss';
+
+.tree {
+
+  &-hd {
+    display: flex;
+    margin-bottom: rpx(16);
+    justify-content: space-between;
+  }
+
+  &-bd {
+    text-align: left;
+  }
+
+  &-title::before {
+    content: '\e64e';
+    margin-right: rpx(8);
+    font-family: "iconfont" !important;
+    font-size: 18px;
+    font-style: normal;
+    color: #445279;
+  }
+
+  :global(.ls-tree-label) {
+    padding-right: rpx(8);
+    line-height: rpx(34); 
+
+    &:hover .edit {
+      display: inline-block;
+    }
+
+    &:hover {
+      background-color: rgba(85, 168, 253, .06);
+      color: #55A8FD;
+    }
+  }
+
+  :global(.ls-tree-item>.ls-tree-label>.ls-tree-prefix) {
+    height: auto;
+    
+    &:before {
+      content: '\e649';
+      font-family: "iconfont" !important;
+      font-size: 18px;
+      font-style: normal;
+      color: #445279;
+    }
+  }
+  
+  :global(.ls-tree-subitem>.ls-tree-label>.ls-tree-prefix) {
+    height: auto;
+
+    &:before {
+      content: '\e647';
+      font-family: "iconfont" !important;
+      font-size: 18px;
+      font-style: normal;
+      color: rgba(68, 82, 121, .64);
+    }
+  }
+  
+  :global(.ls-tree-item.is-active>.ls-tree-label) {
+    &>:global(.ls-tree-prefix::before) {
+      color: #fff;
+    }
+
+    .edit {
+      display: block;
+      color: #fff!important;
+    }
+  }
+
+  :global(.ls-tree-subitem.is-active>.ls-tree-label) {
+    &>:global(.ls-tree-prefix::before) {
+      color: #fff;
+    }
+
+    .edit {
+      display: block;
+      color: #fff!important;
+    }
+  }
+
+  .edit {
+    float: right;
+    display: none;
+
+    &-icon {
+
+      &:before {
+        content: '\e60a';
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.log.mapper.SysLogMapper">
+
+    <select id="selectLogPage" resultType="com.bimforest.ems.modules.log.VO.LogVO">
+        SELECT id,
+        create_date as createDate,
+        (select user_name from sys_user  where sys_log.user_phone = sys_user.phone ) as user_name,
+        module,action FROM sys_log
+
+       <where>
+           <if test="startDate != null ">
+               <![CDATA[  and   to_date(create_date :: text ,'YYYY-MM-DD HH24:MI:SS') >= to_date(#{startDate} :: text,'YYYY-MM-DD HH24:MI:SS')   ]]>
+           </if>
+           <if test="endDate != null">
+               <![CDATA[  and   to_date(create_date :: text ,'YYYY-MM-DD HH24:MI:SS') <= to_date(#{endDate} :: text,'YYYY-MM-DD HH24:MI:SS')   ]]>
+           </if>
+       </where>
+        ORDER BY create_date DESC
+    </select>
+</mapper>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.department.mapper.ReportMapper">
+
+    <select id="getDepartmentReportWeekly" resultType="com.bimforest.ems.modules.department.vo.GetAssistReportWeeklyVO">
+       SELECT
+        em.id as engineeringId,
+        em.engineering_name as engName ,
+        ( SELECT dr.stage from report_department_list dr WHERE em.id = dr.engineering_id and dr.report_id =  #{reportId}),
+        ( SELECT dr.next_plan from report_department_list dr WHERE em.id = dr.engineering_id and dr.report_id =  #{reportId}),
+        ( SELECT dr.project_leader from report_department_list dr WHERE em.id = dr.engineering_id and dr.report_id = #{reportId}),
+        ( SELECT dr.coordination from report_department_list dr WHERE em.id = dr.engineering_id  and dr.report_id =  #{reportId} )
+        from base_engineering em INNER JOIN base_engineering_ranage er on er.engineering_id = em.id AND
+        er.ranage_type =  #{organizationType}
+    </select>
+    <delete id="deleteByReportId">
+        delete from report_department_list where report_id = #{reportId}
+    </delete>
+    <select id="selectReportList" resultType="com.bimforest.ems.modules.department.vo.ReportVO">
+                        SELECT
+                        id,
+                        report_id,
+                        engineering_id,
+                        eng_name,
+                        stage,
+                        solution,
+                        next_plan,
+                        project_leader,
+                        coordination,
+                        id,
+                        work_text,
+                        total,
+                        solution_all,
+                        remark,
+                        create_date,
+                        update_date,
+                        state,
+                        engineering_code,
+                        plan_complete,
+                        plan,
+                        back_ward,
+                        department,
+                        (SELECT
+                        'edit' as edit
+                        FROM
+                        base_engineering_ranage b WHERE person_in_charge =#{userId} and r.engineering_id = b.engineering_id )
+                        FROM
+                        report_department_list r where r.report_id = #{reportId}
+    </select>
+    <delete id="deleteReport">
+        DELETE FROM report_department_list WHERE id = #{id}
+    </delete>
+</mapper>

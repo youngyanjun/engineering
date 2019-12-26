@@ -1,0 +1,12 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": null,
+    "safeInfo": "1",
+    "dangerSource": "[{\"dangerSource\":\"1\",\"mightHappenArea\":\"2\",\" measuresTaken\":\"3\"}]",
+    "nextDangerSource": "[]",
+    "siteCheck": "[]"
+  }
+}

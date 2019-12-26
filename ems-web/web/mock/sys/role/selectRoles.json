@@ -1,0 +1,44 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [
+    {
+      "id": "1",
+      "parentId": "",
+      "child": [
+        {
+          "id": "f45174007d0ddf1d039b1bb0dac1141f",
+          "parentId": "1",
+          "child": null,
+          "roleName": "量树信息科技（上海）有限公司",
+          "remark": "现在是 备注"
+        },
+        {
+          "id": "3",
+          "parentId": "1",
+          "child": [
+            {
+              "id": "7",
+              "parentId": "3",
+              "child": null,
+              "roleName": "安装部",
+              "remark": "2"
+            },
+            {
+              "id": "5",
+              "parentId": "3",
+              "child": null,
+              "roleName": "工程部",
+              "remark": "123"
+            }
+          ],
+          "roleName": "总经理2",
+          "remark": "·"
+        }
+      ],
+      "roleName": "总裁",
+      "remark": "1"
+    }
+  ]
+}

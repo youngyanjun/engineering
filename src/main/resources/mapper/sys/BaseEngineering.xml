@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.BaseEngineeringMapper">
+
+    <select id="selectEngineeringList" resultType="com.bimforest.ems.modules.sys.vo.EngineeringListVO">
+
+        SELECT a.id ,
+        a.engineering_name as name ,
+        (SELECT string_agg(ranage_type,';')  FROM base_engineering_ranage c WHERE c.engineering_id = a.id) as gather,
+        (SELECT b.user_name FROM sys_user b WHERE b.id = a.manager_id) as managerName,
+        (SELECT b.id FROM sys_user b WHERE b.id = a.manager_id) as managerId,
+        (SELECT b.phone FROM sys_user b WHERE b.id = a.manager_id) as managerPhone,
+        a.engineering_code as engineeringCode,
+        a.engineering_abbreviation as engineeringAbbreviation,
+        a.contract_price as contentPrice,
+        a.create_date as createDate
+        FROM base_engineering a
+        <where>
+            <if test="engineeringName != null and engineeringName != ''">
+                and a.engineering_name like concat('%',#{engineeringName},'%')
+            </if>
+        </where>
+
+
+    </select>
+    <select id="selectEngineeringCode" resultType="int">
+        select count (*) from base_engineering where engineering_code = #{engineeringCode}
+    </select>
+    <select id="selectOtherEngineeringCode" resultType="int">
+
+        select count (*) from base_engineering where engineering_code = #{engineeringCode} and id != #{id}
+    </select>
+    <delete id="updateOrgIdById">
+        update base_engineering set org_id = '' where id = #{id}
+    </delete>
+
+
+</mapper>

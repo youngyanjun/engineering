@@ -1,0 +1,35 @@
+@import '@/styles/variable.scss';
+
+content {}
+
+.group {
+  line-height: rpx(32);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(85, 168, 253, .06);
+  }
+
+  :global(.ls-checkbox) {
+    width: 100%;
+  }
+
+  :global(.ls-checkbox::before) {
+    float: right;
+  }
+
+  &-username {
+    min-width: rpx(300);
+    min-height: rpx(1);
+    color: #445279;
+  }
+
+  &-mobile {
+    float: right;
+    margin-right: rpx(16);
+    min-width: rpx(110);
+    min-height: rpx(1);
+    color: #ccc;
+    text-align: right;
+  }
+}

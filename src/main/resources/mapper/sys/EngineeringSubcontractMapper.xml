@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.BaseSubcontractorMapper">
+
+    <select id="selectSubcontractList" resultType="com.bimforest.ems.modules.sys.vo.SubcontractorListVO">
+
+        SELECT a.id ,
+				 a.unit_name,
+				 a.contact,
+				 a.phone,
+				 a.create_date as createDate,
+        (SELECT count(*) FROM base_engineering_subcontractor b WHERE b.engineering_id = a.id) as engineeringSum
+        FROM base_subcontractor a
+        <where>
+            <if test=" name != null and name != ''">
+                and a.unit_name like  CONCAT('%',#{name },'%' )
+            </if>
+
+        </where>
+        ORDER BY a.create_date desc
+    </select>
+    <select id="selectSubcontract" resultType="com.bimforest.ems.modules.sys.vo.SubcontractorEngineeringVO">
+        select id , unit_name from base_subcontractor  ORDER BY  unit_name ASC
+    </select>
+</mapper>

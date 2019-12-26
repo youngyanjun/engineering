@@ -1,0 +1,6 @@
+{
+  "status": "FAILED",
+  "errorCode": "SYS2002",
+  "errorMsg": "该用户还没有登录",
+  "result": null
+}

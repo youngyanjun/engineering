@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.sys.mapper.SysUserMapper">
+    <update id="updateStatus">
+        update sys_user
+        <set>
+            status = #{status}
+        </set>
+        <where>
+            id in
+            <foreach collection="list" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </update>
+    <update id="updatePassword">
+        update sys_user
+        <set>
+            user_pwd = #{password}
+        </set>
+        <where>
+            id in
+            <foreach collection="list" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </update>
+    <select id="selectUserList" resultType="com.bimforest.ems.modules.sys.vo.SysUserVO">
+        SELECT a.id ,
+        a.user_name,
+        a.e_mail,
+        a.phone,
+        status,
+        (SELECT count(*) FROM base_engineering b WHERE b.manager_id = a.id) as fieldsSum
+        FROM sys_user a where
+        status != -1
+        <if test=" sysUserName != null  and sysUserName != ''">
+            and a.user_name like CONCAT('%',#{sysUserName },'%' )
+        </if>
+        ORDER BY a.create_date
+
+    </select>
+    <select id="checkEmailIsEnable" resultType="int">
+        select count(*) from sys_user where e_mail  = #{email} and id != #{id}
+    </select>
+    <select id="queryUserList" resultType="com.bimforest.ems.modules.sys.vo.UserListEngineering">
+        select id,user_name,phone from sys_user where status = 1 ORDER BY  user_name ASC
+    </select>
+    <select id="selectOneEmail" resultType="int">
+        select count (*) from sys_user where e_mail = #{email} and id != #{id}
+    </select>
+    <select id="selectListUser" resultType="com.bimforest.ems.modules.base.vo.QueryUserListVO">
+        select id,user_name,phone from sys_user where status = 1 and user_type = '1'
+        <if test="_parameter != null and _parameter != ''">
+            and user_name like CONCAT('%',#{_parameter },'%' )
+        </if>
+        ORDER BY user_name ASC
+    </select>
+</mapper>

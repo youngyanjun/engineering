@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.base.mapper.BaseOrganizationMapper">
+
+    <select id="selectOrganizationList"
+            resultType="com.bimforest.ems.modules.sys.vo.OrganizationListVO">
+
+
+        SELECT a.id ,
+        a.name ,
+        a.type,
+        (SELECT b.user_name FROM sys_user b WHERE b.id = a.manager_id) as manager,
+        (SELECT b.id FROM sys_user b WHERE b.id = a.manager_id) as managerId,
+        (SELECT b.phone FROM sys_user b WHERE b.id = a.manager_id) as Phone,
+        a.remark,
+        a.create_date as createDate
+        FROM base_organization a
+
+        <where>
+            <if test="_parameter != null and _parameter != ''">
+                and a.name like CONCAT('%',#{_parameter},'%')
+            </if>
+        </where>
+        order by a.id
+    </select>
+    <delete id="updateAddress">
+
+        update  engineering_organization set longitude = #{longitude},latitude = #{longitude} where id = #{id}
+
+
+    </delete>
+
+    <select id="getUserOrganizationByUserId" resultType="com.bimforest.ems.modules.sys.vo.OrganizationTemplateListVO">
+        SELECT
+        id as orgId,
+        org_id as id,
+        name,
+        parent_id
+        FROM
+         engineering_organization_user
+         where
+         engineering_id = #{engineeringId}
+
+    </select>
+    <insert id="insertBatch">
+
+        insert into
+        engineering_organization
+
+        (
+        id,
+        parent_id,
+        name,
+        manager_id,
+        type
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (
+            #{item.id},
+            #{item.parentId},
+            #{item.name},
+            #{managerId},
+            'user'
+            )
+        </foreach>
+
+    </insert>
+    <select id="selectOrganizationsByUserId" resultType="com.bimforest.ems.modules.base.entity.BaseOrganization">
+        select
+            o.id,
+            o.category,
+            o."name",
+            o.address,
+            o.latitude,
+            o.longitude,
+            o.category,
+            o.type
+        from
+            base_organization o
+        where
+            o.id in(
+            select
+                distinct bs.org_id
+            from
+                base_structure bs
+            left join base_structure_user bsu on
+                bsu.structure_id = bs.id
+            where
+                bsu.user_id = #{userId}
+                and bsu.status = 1
+                and bs.status = 1 )
+        union select
+            o.id,
+            o.category,
+            o."name",
+            o.address,
+            o.latitude,
+            o.longitude,
+            o.category,
+            o.type
+        from
+            base_organization o
+        where
+            o.manager_id = #{userId}
+        and
+            o.status=1
+    </select>
+    <select id="selectBaseInfoOne" resultType="com.bimforest.ems.modules.base.vo.BaseInfoVO">
+        SELECT *
+        from
+        base_engineering WHERE org_id = #{orgId}
+    </select>
+
+</mapper>

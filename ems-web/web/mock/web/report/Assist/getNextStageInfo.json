@@ -1,0 +1,20 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": "0b51895e65e7593f22b4591fca4f5018",
+    "coordination": "[]",
+    "drawings": "[]",
+    "contract": "[{\"content\":\"1\",\"status\":\"1\",\"result\":\"1\",\"manhour\":\"2019-12-24\",\"presentationDate\":\"2019-12-24\"}]",
+    "civilengineeringSub": "[{\"content\":\"1\",\"status\":\"2\",\"result\":\"3\",\"proposalCompletionDate\":\"2019-12-24\",\"manhour\":\"2019-12-09\"}]",
+    "prefabricatedSub": "[]",
+    "waterpowerSub": "[]",
+    "havcSub": "[]",
+    "decorationSub": "[]",
+    "otherSub": "[]",
+    "personnel": null,
+    "machine": null,
+    "stageInfoRemark": "111"
+  }
+}

@@ -1,0 +1,31 @@
+.ls-switch {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 48px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 16px;
+  background-color: #E6E7EC;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &.is-checked {
+    background-color: #55A8FD;
+  }
+
+  &.is-checked::after {
+    float: right;
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+  }
+}

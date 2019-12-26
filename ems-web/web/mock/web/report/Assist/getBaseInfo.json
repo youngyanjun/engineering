@@ -1,0 +1,18 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": {
+    "id": "1",
+    "constructionName": "驱蚊器请问请问",
+    "constructionUnit": "请问请问嘤嘤嘤",
+    "qualityInspectionUnit": "13123123",
+    "qualityInspectionStation": "123",
+    "projecLeader": "12313123",
+    "technicalLeader": "123123",
+    "safeMan": "3电风扇等方式",
+    "abbreviation": "123",
+    "longitude": "121.367051",
+    "latitude": "31.130061"
+  }
+}

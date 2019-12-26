@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimforest.ems.modules.department.mapper.ReportListMapper">
+
+    <select id="getReportList" resultType="com.bimforest.ems.modules.department.vo.ReportListVO">
+
+        select
+        id,
+        report_name,
+        to_char(create_date,'MM') as month,
+        report_type,
+        update_date,
+        status
+        from
+        report_department
+        <where>
+            <if test="reportType != null and reportType != ''">
+                and report_type = #{reportType}
+            </if>
+            <if test="reportName != null and reportName != ''">
+                and report_name like CONCAT('%',#{reportName },'%' )
+            </if>
+
+            <if test="organizationId != null and organizationId != ''">
+                and org_id = #{organizationId}
+            </if>
+
+        </where>
+
+        order by update_date
+
+
+    </select>
+    <select id="selectListWeeklyById" resultType="com.bimforest.ems.pojo.DateWeekly">
+
+        select weekly_month as weekly,
+        to_char(construction_date_start,'YYYY-MM-DD') as sDate,
+        to_char(construction_date_finish,'YYYY-MM-DD') as eDate
+        from
+        report_department
+        where org_id = #{organizationId}
+    </select>
+    <select id="getId" resultType="java.lang.String">
+
+        select id from report_department where report_type = #{reportType} and weekly_month = #{weeklyMonth} -1 ;
+    </select>
+    <select id="selectListMonthByOrganizationType" resultType="java.lang.Integer">
+        select
+         weekly_month
+         from report_department
+         where report_type = 1
+         and org_id = #{organizationId}
+         and  to_char(create_date,'YYYY') = #{year} ;
+    </select>
+    <update id="updateStatusByReport">
+        UPDATE report_department SET status = #{status} WHERE id = #{reportId}
+    </update>
+    <select id="getOrgEngUser" resultType="com.bimforest.ems.modules.department.vo.GetOrgEngUserVO">
+            SELECT
+                ranage_type as orgName,
+                person_in_charge as userId
+            FROM
+                base_engineering_ranage
+            WHERE
+                person_in_charge IS NOT NULL
+                AND ranage_type != #{organizationType}
+                AND engineering_id = #{engineeringId}
+
+    </select>
+    <select id="getEngId" resultType="java.lang.String">
+        SELECT
+            engineering_id
+        FROM
+            base_engineering_ranage
+        WHERE
+            ranage_type = #{organizationType}
+	    AND person_in_charge IS NOT NULL
+    </select>
+    <select id="getRawDataList" resultType="com.bimforest.ems.modules.management.VO.SelectRawDataListVO">
+
+        SELECT
+        rd.id,
+        rd.report_name,
+        report_type,
+        rd.org_id ,
+        ( SELECT bo.NAME FROM base_organization bo WHERE bo.id = rd.org_id ) as orgName,
+        (SELECT bo.type FROM base_organization bo WHERE bo.id = rd.org_id ) as orgType,
+        to_char( rd.construction_date_start, 'MM' ) as reportMonth,
+        update_date
+        FROM
+        report_department rd
+        <where>
+            <if test="rawDataList.orgId != null and rawDataList.orgId != ''">
+                and rd.org_id = #{rawDataList.orgId}
+            </if>
+            <if test="rawDataList.reportName != null and rawDataList.reportName != ''">
+                AND rd.report_name like CONCAT('%',#{rawDataList.reportName },'%' )
+            </if>
+            <if test="rawDataList.reportMonth != null and rawDataList.reportMonth!='' ">
+                <if test="rawDataList.reportType == '0'.toString() ">
+                    and  to_char( rd.construction_date_start, 'YYYY-MM' ) = #{rawDataList.reportMonth}
+                </if>
+
+                <if test="rawDataList.reportType == '1'.toString() ">
+                    and report_type = '1'
+                </if>
+
+                <if test="rawDataList.reportType == null ">
+                  and   to_char( rd.construction_date_start, 'YYYY-MM' ) = #{rawDataList.reportMonth}
+                </if>
+            </if>
+
+            <if test="rawDataList.reportType != null and rawDataList.reportType != ''">
+                AND rd.report_type = #{rawDataList.reportType}
+            </if>
+        </where>
+        <if test=" (rawDataList.reportType == null ) or (rawDataList.reportType == '0'.toString())   ">
+            UNION
+            SELECT
+            re.id,
+            re.report_name,
+            '0' AS type,
+            re.organization_id as orgType,
+            ( SELECT bo.NAME FROM base_organization bo WHERE bo.id = re.organization_id ) as orgName,
+            (SELECT bo.type FROM base_organization bo WHERE bo.id = re.organization_id ) as orgType,
+            to_char( re.construction_date_start, 'MM' ) as reportMonth,
+            update_date
+            FROM
+            reportw_engineering re
+            <where>
+                <if test="rawDataList.orgId != null and rawDataList.orgId != ''">
+                    and re.organization_id = #{rawDataList.orgId}
+                </if>
+                <if test="rawDataList.reportName != null and rawDataList.reportName != ''">
+                    AND re.report_name like CONCAT('%',#{rawDataList.reportName },'%' )
+
+                </if>
+                <if test="rawDataList.reportMonth != null and rawDataList.reportMonth!='' ">
+                    AND to_char( re.construction_date_start, 'YYYY-MM' ) = #{rawDataList.reportMonth}
+                </if>
+            </where>
+            ORDER BY
+            update_date
+        </if>
+
+
+    </select>
+
+</mapper>

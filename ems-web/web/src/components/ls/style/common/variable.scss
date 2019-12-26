@@ -1,0 +1,69 @@
+// button
+$button-namespace: 'ls-button';
+$button-border: 1px;
+$button-radius: 4px;
+$button-padding: 4px;
+$button-border-color: #D4D7E1;
+$button-color: #445279;
+$button-round-radius: 20px;
+$button-large-padding: 32px;
+$button-large-font-size: 18px;
+$button-normal-padding: 12px;
+$button-normal-font-size: 14px;
+$button-small-padding: 8px;
+$button-small-font-size: 14px;
+$button-base-color: #445279;
+$button-base-active-color: rgba(68, 82, 121, .04);
+$button-base-border-color: rgba(68, 82, 121, .04);
+$button-base-background-color: rgba(68, 82, 121, .02);
+$button-default-color: #298DFF;
+$button-default-active-color: #4eaaff;
+$button-default-border-color: rgba(24, 144, 255, .64);
+$button-default-background-color: rgba(24, 144, 255, .08);
+$button-success-color: #5FC85F;
+$button-success-active-color: #75e26d;
+$button-success-border-color: rgba(92, 200, 84, .64);
+$button-success-background-color: rgba(81, 191, 77, .08);
+$button-danger-color: #F15661;
+$button-danger-active-color: #f59da9;
+$button-danger-border-color: rgba(255, 96, 118, .32);
+$button-danger-background-color: rgba(255, 96, 118, .08);
+$button-warning-color: #F39C4F;
+$button-warning-active-color: #efb27c;
+$button-warning-border-color: rgba(243, 156, 79, 1);
+$button-warning-background-color: rgba(251, 234, 219, 1);
+$button-text-color: #1890FF;
+$button-text-active-color: #4aa7fd;
+$button-text-background-color: rgba(24, 144, 255, .08);
+
+// sme
+$sme-namespace: 'ls-sme';
+
+// divider
+$divider-namespace: 'ls-divider';
+$divider-margin-side: 8px;
+$divider-margin: 24px;
+
+// input
+$input-namespace: 'ls-input';
+
+// message
+$message-namespace: 'ls-message';
+$message-info-color: #909399;
+$message-info-background-color: #edf2fc;
+$message-info-border-color: #ebeef5;
+$message-success-color: #67c23a;
+$message-success-background-color: #e1f3d8;
+$message-success-border-color: #f0f9eb;
+$message-warning-color: #e6a23c;
+$message-warning-background-color: #fdf6ec;
+$message-warning-border-color: #faecd8;
+$message-error-color: #f56c6c;
+$message-error-background-color: #fef0f0;
+$message-error-border-color: #fde2e2;
+
+// select
+$select-namespace: 'ls-select';
+
+//
+$option-namespace: 'ls-option';

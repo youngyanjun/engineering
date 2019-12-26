@@ -1,0 +1,136 @@
+@import "@/styles/variable.scss";
+
+/* 地图 */
+.maplable {
+  position: absolute;
+  width: auto;
+  left: 50px;
+  border: none;
+  color: white;
+  background: rgba(47, 84, 235, 0.85);
+  height: 40px;
+  white-space: nowrap;
+  -moz-user-select: none;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 0;
+  box-sizing: border-box;
+
+  >div {
+    padding: 10px;
+  }
+}
+
+.marker-arrow {
+  position: absolute;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent rgba(47, 84, 235, 0.85) transparent transparent;
+  top: 12px;
+  left: -16px;
+  overflow: hidden;
+}
+
+/* 面板 */
+.prolist_all {
+  width: 480px;
+  background-color: white;
+  position: absolute;
+  top: 68px;
+  bottom: 24px;
+  left: 16px;
+  box-shadow: 0 2px 6px rgba(0, 21, 41, 0.08);
+  overflow: auto;
+
+  li {
+    padding: rpx(8);
+    border-bottom: 1px solid #e6e7ec;
+  }
+}
+
+.pro_item {
+  position: relative;
+  padding: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(245, 246, 248, 1);
+    opacity: 1;
+    border-radius: 8px;
+  }
+}
+
+.pro_tag {
+  position: relative;
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 3px 10px;
+  color: white;
+}
+
+.dept {
+  background: rgb(48, 129, 211);
+}
+
+.maplable.dept {
+  background: rgba(19, 112, 207, 0.85);
+  border: 1px solid rgba(19, 112, 207, 1);
+  box-shadow: 2px 2px 4px rgba(19, 112, 207, 0.16);
+
+  .marker-arrow {
+    border-color: transparent rgba(19, 112, 207, 0.85) transparent transparent;
+  }
+}
+
+.engineering {
+  background: #45ce96;
+}
+
+.maplable.engineering {
+  background: rgba(44, 200, 138, 0.85);
+  border: 1px solid rgba(44, 200, 138, 1);
+  box-shadow: 2px 2px 4px rgba(44, 200, 138, 0.16);
+
+  .marker-arrow {
+    border-color: transparent rgba(44, 200, 138, 0.85) transparent transparent;
+  }
+}
+
+.leader {
+  background: #de7d5e;
+
+}
+
+.maplable.leader {
+  background: rgba(219, 108, 73, 0.85);
+  border: 1px solid rgba(219, 108, 73, 1);
+  box-shadow: 2px 2px 4px rgba(219, 108, 73, 0.16);
+
+  .marker-arrow {
+    border-color: transparent rgba(219, 108, 73, 0.85) transparent transparent;
+  }
+}
+
+.pro_name {
+  font-size: 20px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  height: rpx(54);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.icon-address {
+  margin-right: rpx(4);
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+
+  &:before {
+    content: "\e61d";
+    color: #dadbe1;
+  }
+}

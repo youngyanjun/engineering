@@ -1,0 +1,71 @@
+$tree-namespace: 'ls-tree';
+
+.#{$tree-namespace} {
+
+  &-prefix {
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+
+  &-checkbox {
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    // background-color: #000;
+
+    &.is-checked {
+      // background-color: #f00;
+    }
+  }
+
+  &-subitem>&-label {
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(12, 20, 43, 0.64);
+  }
+
+  &-item>&-label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #445279;
+    line-height: 34px;
+  }
+
+  & &-item.is-active>&-label,
+  & &-subitem.is-active>&-label {
+    background-color: #55A8FD;
+    color: #fff;
+  }
+
+  &-label {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #55A8FD;
+      color: #fff;
+    }
+  }
+
+  &-item,
+  &-subitem {
+    height: 34px;
+    overflow: hidden;
+  }
+
+  &-item.is-expanded,
+  &-subitem.is-expanded {
+    height: auto;
+    overflow: visible;
+  }
+
+  &>&-item,
+  &>&-subitem {
+    height: auto;
+    overflow: visible;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "SUCCESS",
+  "errorCode": null,
+  "errorMsg": null,
+  "result": [
+    {
+      "id": "187aeab170460aa518932b5d8ccff5bc",
+      "createDate": null,
+      "updateDate": null,
+      "createBy": null,
+      "updateBy": null,
+      "status": null,
+      "remark": null,
+      "userName": "钱三强",
+      "userPwd": null,
+      "phone": "123",
+      "isFreeze": null,
+      "saveTime": null,
+      "roles": null,
+      "salt": null,
+      "userType": null,
+      "email": null
+    }
+  ]
+}
