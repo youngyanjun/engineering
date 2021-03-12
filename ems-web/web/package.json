@@ -16,7 +16,7 @@
   "dependencies": {
     "echarts": "^4.2.1",
     "element-ui": "^2.9.2",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "jspdf-customfonts": "^0.0.4-rc.4",
     "vant": "^2.0.2",
     "vue": "^2.6.10",
